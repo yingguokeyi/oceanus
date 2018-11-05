@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/header_common.css" />
+		<link rel="stylesheet" href="css/mine.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/font-size.js"></script>
+		<script type="text/javascript" src="layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="js/global_variable.js"></script>
+		<script type="text/javascript" src="js/token.js"></script>
+		<script type="text/javascript" src="js/token_success.js"></script>
+		<script type="text/javascript" src="js/jsonselect.js"></script>
+		<title>个人中心</title>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="javascript:;" class="title_top_first">
+
+				</a>
+				<span class="title_top_center">个人中心</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="main_top">
+				<ul class="hea_ul">
+					<li class="first">
+						<a id="fir_per">
+							<img src="img/autoPic.png" />
+						</a>
+					</li>
+					<li class="second sec_img">
+						<span class="second_nickname" id="third_a" style="display:none;">
+							登录注册
+						</span>
+						<span class="second_nickname" id="nickname" style="display:none;"></span>
+						<span class="sec_span" style="display:none;">邀请码: <i></i><button class="copy" data-clipboard-action="copy" data-clipboard-target="i">复制</button></span>
+					</li>
+					<li class="third" id="grade" style="display:none;">
+						<span class="third_span">
+							<i></i>
+							<img src="img/img_adress/login.png" />
+						</span>
+					</li>	
+				</ul>
+			</div>
+			<div class="main_bottom">
+				<!-- 我的订单 -->
+				<div>
+				    <div class="main_order">
+					  	<span class="order_mine">我的订单</span>
+					  	<span class="order_look">查看全部<img src="img/xiayiye.png" class="order_img"  id="order_img" /></span>
+				    </div>
+					<div class="collect_goods">
+						<ul class="collect_goods_order">
+							<li>
+								<a class="no_pay">
+									<span class="collect_goods_order_span"> 
+										<img src="img/no_pay.png" />
+									</span><br /> 待付款
+								</a>
+							</li>
+							<li>
+								<a class="wait_shou">
+									<span class="collect_goods_order_span">
+										<img src="img/wait_shou.png" />
+									</span><br /> 待收货
+								</a>
+							</li>
+							<li>
+								<a class="yi_ok">
+									<span class="collect_goods_order_span">
+										<img src="img/yi_ok.png" />
+									</span><br /> 已完成
+								</a>
+							</li>
+							<li>
+								<a class="yi_quxiao">
+									<span class="collect_goods_order_span">
+										<img src="img/yi_quxiao.png" />
+									</span><br /> 已取消
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 我的粉丝 -->
+				<div>
+					<div class="main_order" id="mine_fans" style="border-radius:0;">
+					  	<span class="order_mine">我的粉丝</span>
+					  	<span class="order_look">查看全部<img src="img/xiayiye.png" class="order_img" /></span>
+				    </div>
+				    <div class="main_fans">
+				    	<ul>
+				    		<li id='regular_member'>
+				    			<p><span></span>人</p>
+				    			<p>普通会员</p>
+				    		</li>
+				    		<li id="small_shopkeeper">
+				    			<p><span></span>人</p>
+				    			<p>小掌柜</p>
+				    		</li>
+				    		<li id="big_shopkeeper">
+				    			<p><span></span>人</p>
+				    			<p>大掌柜</p>
+				    		</li>
+				    	</ul>
+				    </div>
+			    </div>
+				<div class="list_content_shop">
+					<ul>
+						<li class="first">
+							<a href="javascript:;" class="first_a back_list">
+								<span class="title_content">
+								<img src='img/img_personal/partner.png'> 
+									<span>成为合伙人</span>
+								</span>
+								<span class="back_span">
+									<span style="font-size:.26rem;color:#999;">享最高80%奖励</span>
+									<img src="img/xiayiye.png"/>
+								</span>
+							</a>
+						</li>
+						<li class="first yaoqing_login">
+							<a href="javascript:;" class="first_a">
+								<span class="title_content">
+								<img src='img/friend.png'>
+									<span>邀请好友</span>
+								</span>
+								<span class="back_span">
+									<img src="img/xiayiye.png" />
+								</span>
+							</a>
+						</li>
+						<div class="first_bg"></div>
+						<li class="first">
+							<a href="javascript:;" class="first_a fun_wallet">
+								<span class="title_content">
+								<img src='img/img_personal/wallet.png'> 
+									<span>钱包</span>
+								</span>
+								<span class="back_span">
+									<img src="img/xiayiye.png"/>
+								</span>
+							</a>
+						</li>
+						<li class="first">
+							<a href="javascript:;" class="first_a unopen">
+								<span class="title_content">
+								<img src='img/xx.png'> 
+									<span>消息</span>
+								</span>
+								<span class="back_span">
+									<img src="img/xiayiye.png"/>
+								</span>
+							</a>
+						</li>
+						<div class="first_bg"></div>
+						<li class="first fuwu_login"  onclick="window.location='personal/help_center.html'">
+							<a href="javascript:;" class="first_a">
+								<span class="title_content">
+								<img src='img/help.png'>
+									<span>帮助中心</span>
+								</span>
+								<span class="back_span">
+									<img src="img/xiayiye.png"/>
+								</span>
+							</a>
+						</li>
+						<li class="first relation_login">
+							<a href="javascript:;" class="first_a">
+								<span class="title_content">
+								<img src='img/service.png'>
+									<span>联系客服</span>
+								</span>
+								<span class="back_span">
+									<img src="img/xiayiye.png" />
+								</span>
+							</a>
+						</li>
+						<li class="first complaint_login">
+							<a href="javascript:;" class="first_a">
+								<span class="title_content">
+								<img src='img/accuse.png'>
+									<span>投诉建议</span>
+								</span>
+								<span class="back_span">
+									<img src="img/xiayiye.png" />
+								</span>
+							</a>
+						</li>
+						<li class="first set_login"  onclick="window.location='personal/per_set.html'" >
+							<a href="javascript:;" class="first_a">
+								<span class="title_content">
+								<img src='img/set.png'>
+									<span>设置</span>
+								</span>
+								<span class="back_span">
+									<img src="img/xiayiye.png"/>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<footer class="footer_bottom">
+			<ul class="footer_ul">
+				<li>
+					<a href="index.html">
+						<span class="footer_span"> 
+							<img src="img/home.png" />
+						</span><br /> 首页
+					</a>
+				</li>
+				<li>
+					<a href="classify.html">
+						<span class="footer_span">
+							<img src="img/classify.png" />
+						</span><br /> 分类
+					</a>
+				</li>
+				<li>
+					<a href="member.html">
+						<span class="footer_span">
+							<img src="img/memberl.png" />
+						</span><br /> 会员
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" class="style">
+						<span class="footer_span">
+							<img src="img/minedbg.png" />
+						</span><br /> 我的
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<!-- 登录 -->
+		<div class="warm" style="display: none;">
+			<div class="warm_title">
+				<h4>温馨提示</h4>
+				<p>您还没有登录  是否要登陆</p>
+			</div>
+			<div class="warm_choose">
+				<a class="warm_login">登录</a>
+				<a class="warm_cancel">取消</a>
+				
+			</div>
+		</div>
+		<!-- 联系客服 -->
+		<div class="service warm" style="display: none;">
+			<div class="warm_title">
+				<h4>提示</h4>
+				<p>400-0000-0000</p>
+			</div>
+			<div class="service_choose">
+				<a class="service_cancel">确定</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/clipboard.min.js"></script>
+	<script type="text/javascript" src="js/personal/mine.js"></script>
+</html>

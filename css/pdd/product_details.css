@@ -1,0 +1,128 @@
+.main_center{
+	width: 100%;
+	padding: 0 .26rem;
+}
+.product_ul{
+	width: 100%;
+	margin-top: .3rem;
+}
+.product_ul li{
+	width: 100%;
+}
+.product_init{
+	overflow: hidden;
+	margin-bottom: .3rem;
+}
+.product_price{
+	float: left;
+	color: #999;
+	font-size: .26rem;
+	text-decoration: line-through;
+}
+.product_price i{
+	margin-left: .12rem;
+	font-size: .4rem;
+}
+.product_num{
+	float: right;
+	color: #999;
+	font-size: .22rem;
+}
+.product_title_txt{
+	color: #333;
+	line-height: .35rem;
+	/*margin-bottom: .3rem;*/
+}
+.product_discount{
+	position: relative;
+	overflow: hidden;
+}
+.product_discount img{
+	width: 100%;
+	height: 1.3rem;
+}
+.product_left{
+	/*position: absolute;
+	top:.1rem;
+	left: .48rem;*/
+	float: left;
+}
+.product_left p:nth-child(1){
+	color: #666;
+	font-size: .28rem;
+}
+.product_left p:nth-child(1) span{
+	font-size: .26rem;
+	color: #e40012;
+}
+.product_left p:nth-child(1) span i{
+	font-size: .52rem;
+	color: #e40012;
+}
+.product_left p:nth-child(2){
+	font-size: .22rem;
+	color: #f8f8f8;
+}
+.product_right{
+	/*position: absolute;
+	top:.3rem;
+	right: .5rem;*/
+	float: right;
+	position: relative;
+}
+#product_arch{
+	width: 1.74rem;
+	height: .62rem;
+}
+.product_right p{
+	width: 1.74rem;
+	height: .62rem;
+	color: #fff;
+	font-size: .26rem;
+	position: absolute;
+	top:0;
+	text-align: center;
+	line-height: .62rem;
+}
+/*.product_right p:nth-child(1) span{
+	font-size: .18rem;
+}
+.product_right p:nth-child(1) i{
+	font-size: .3rem;
+
+}*/
+/*.product_right p:nth-child(2){
+	color: #fff;
+	font-size: .24rem;
+	margin-top: .1rem;
+}*/
+.main_bot{
+	width: 100%;
+}
+.product_intro{
+	width: 100%;
+	font-size: .24rem;
+	color: #333;
+	line-height: .35rem;
+	margin: .3rem 0;
+}
+.product_intro_img{
+	width: 100%;
+}
+.product_intro_img ul li{
+	width: 100%;
+}
+.footer{
+	width: 100%;
+	height: .96rem;
+	text-align: center;
+	line-height: .96rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: #b61c25;
+}
+.go_buy{
+	font-size: .36rem;
+	color: #fff;
+}

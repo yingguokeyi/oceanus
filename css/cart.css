@@ -1,0 +1,271 @@
+input.check {
+	position: absolute;
+    top: 1rem;
+    left: 0.22rem;
+    width: 0.35rem;
+    height: 0.35rem;
+}
+input.goods_check_title{
+	position: absolute;
+    top: 0.08rem;
+    left: 0.22rem;
+    width: 0.35rem;
+    height: 0.35rem;
+}
+/*购物车*/
+.shopping {
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+.shop_group_item{
+	margin-top: 0.2rem;
+}
+.shop_name{
+	background: #fff;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    padding: 0 0.3rem;
+    position: relative;
+}
+.shop_name .coupons{
+	float:right;
+}
+.shop_name .coupons span{
+	display:inline-block;
+	padding:0 5px;
+}
+.shop_name .coupons em{
+	color:#e0e0e0;
+}
+/*店铺商品排列表*/
+.shop_goods_list{
+	width: 100%;
+	height: auto;
+	
+}
+.shop_info{
+	background-color:#FFFFFF;
+	height:2.35rem;
+	position:relative;
+	border-bottom: 0.01rem solid #ebebeb;
+}
+.shop_info .checkbox{
+	background-size:20px 20px;
+	position:absolute;
+	top:50%;
+	left:15px;
+	margin-top:-60px;
+	width:20px;
+	height:120px;
+}
+.shop_info .checkbox1{
+	background-size:20px 20px;
+	position:absolute;
+	top:50%;
+	left:15px;
+	margin-top:-60px;
+	width:20px;
+	height:120px;
+}
+.shop_info .shop_info_img{
+	width: 30%;
+	float: left;
+	height:2.35rem;
+}
+.xuanzhong_duigou{
+	width: 10%;
+    float: left;
+    height: 2.35rem;
+}
+.shop_info_img_a{
+	display: inline-block;
+	width: 100%;
+	height: 2.35rem;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.shop_info .shop_info_img img{
+	width:1.86rem;
+	height:1.86rem;
+	margin: 0.22rem 0.2rem;
+}
+.shop_info .shop_info_text{
+	width: 60%;
+	height: 2.35rem;
+	float: left;
+	position: relative;
+}
+.shop_info .shop_info_text h4{
+	font-size:0.26rem;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+	overflow:hidden;
+	margin: 0.1rem 0.2rem 0 0;
+	color: #333;
+}
+.shop_info .shop_info_text .shop_brief{
+	height:0.4rem;
+	line-height:0.4rem;
+	font-size:0.24rem;
+	color:#81838e;
+	white-space:nowrap;
+}
+.shop_info .shop_info_text .shop_brief span{
+	display:inline-block;
+	margin-right:0.1rem;
+}
+.shop_info .shop_info_text .shop_pices {
+	line-height: 0.6rem;
+	line-height: 0.6rem;
+	color:#A5772C;
+	font-size:0.28rem;
+}
+.shop_info .shop_info_text .shop_pices span{
+	margin-left:0.2rem ;
+}
+.shop_info .shop_info_text .shop_arithmetic {
+	position: absolute;
+    right: 0.25rem;
+    bottom: 0.1rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    height: 0.5rem;
+}
+.shop_info .shop_info_text .shop_arithmetic a {
+	display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    background-color: #f5f5f5;
+    float: left;
+}
+.shop_info .shop_info_text .shop_arithmetic .minus img{
+	width: 0.25rem;
+	height: 0.25rem;
+}
+.shop_info .shop_info_text .shop_arithmetic .failed {
+	color:#d1d1d1;
+}
+.shop_info .shop_info_text .shop_arithmetic .plus img{
+	width: 0.25rem;
+	height: 0.25rem;
+}
+.shop_info .shop_info_text .shop_arithmetic .num {
+	width: 0.6rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    border: none;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 0.26rem;
+    float: left;
+}
+.shopPrice {
+	background: #fff;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: right;
+    margin-right: 0.25rem;
+    font-size: 0.3rem;
+    color: #333;
+}
+.shopPrice span {
+	color:#A5772C;
+}
+.payment_bar {
+    width: 100%;
+    height: 1rem;
+    border-top: 0.01rem solid #EBEBEB;
+    background-color: #fff;
+}
+.payment_bar .all_checkbox {
+	float: left;
+    height: 1rem;
+    line-height: 1rem;
+    padding-left: 0.7rem;
+    width: 2rem;
+}
+.payment_bar .shop_total {
+	float: right;
+    -webkit-box-flex: 1.0;
+    box-flex: 1.0;
+    width: auto;
+    height: 1rem;
+    line-height: 1rem;
+    margin-right: 0.4rem;
+}
+.payment_bar .shop_total strong{
+	display: block;
+    font-size: 0.3rem;
+    color: #333;
+    font-weight: normal;
+}
+.payment_bar .shop_total i{
+    font-size: 0.3rem;
+    color: #A5772C;
+}
+.payment_bar .shop_total span {
+	display:block;
+	font-size:12px;
+}
+.payment_bar .settlement {
+	display: block;
+    float: right;
+    width: 2.4rem;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background-color: #cca86a;
+}
+/*底部*/
+footer{
+	width: 100%;
+    height: 2rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    border-top:1px solid #f3f6f5;
+}
+footer ul{
+	width: 100%;
+    height: 1rem;
+    border-top: 0.01rem solid #ebebeb;
+}
+footer li{
+	width: 20%;
+    height: 1rem;
+    line-height: 0.15rem;
+    font-size: 0.28rem;
+    text-align: center;
+    float: left;
+}
+footer a{
+	display: inline-block;
+	width: 100%;
+	height: 1rem;
+	font-size: 0.24rem;
+	color: #666;
+	line-height: 0.3rem;
+}
+.footer_span{
+	width: 0.5rem;
+	height: 0.5rem;
+	margin-top: 0.05rem;
+}
+.footer_span img{
+	width: 100%;
+	height: 100%;
+}

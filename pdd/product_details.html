@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css">
+		<link rel="stylesheet" href="../css/details_goods.css" />
+		<link rel="stylesheet" href="../css/pdd/product_details.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../js/jsonselect.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js"></script>
+	</head>
+	<body style="background:#fff;">
+		<header>
+			<div class="title_top">
+				<a class="title_top_first" onclick="window.location='../index.html'">
+					<img src="../img/back1.png" class="hea_img"/>
+				</a>
+				<span class="title_top_center">商品详情</span>
+			</div>
+		</header>
+		<div class="main" style="margin-bottom:1rem;">
+			<div class="main_cont">
+				<!-- Swiper -->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+				<div class="main_center">
+					<ul class="product_ul">
+						<li style="margin-bottom:.3rem;">
+							<p class="product_title_txt"></p>
+						</li>
+						<li class="product_discount" style="margin-bottom:.3rem;">
+							<!-- <img src='../img/coupon.png'> -->
+							<div class="product_left">
+								<!-- <p>￥<i></i></p>
+								<p>内部优惠券</p> -->
+								<p>券后价:<span>￥<i class='product_right-price'></i></span></p>
+							</div>
+							<div class="product_right">
+								<img src='../img/arch.png' id="product_arch">
+								<p>券&nbsp;&nbsp;￥&nbsp;<i id="arch_pr" style="font-size:.3rem;"></i></p>
+								<!-- <p>券后价：<span>￥<i class='product_right-price'></i></span></p> -->
+								<!-- <p>有效期：<i class='startime'></i> 至 <i class='endtime'></i></p> -->
+							</div>
+						</li>
+						<li class="product_init">
+							<p class="product_price">原价￥<i></i></p>
+							<p class="product_num">已售<i></i>件</p>
+						</li>
+					</ul>
+					<div class="bg"></div>
+					<div class="main_bot">
+						<div class="product_intro">
+						</div>
+						<div class="product_intro_img">
+							<ul>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="go_back">
+			<img src="../img/return.png">
+		</div>
+		<div class="go_top">
+			<img src="../img/stick.png">
+		</div>
+		<footer class='footer'>
+			<a class="go_buy">立即购买</a>
+		</footer>
+	</body>
+	<script type="text/javascript" src="../js/pdd/product_details.js"></script>
+</html>	

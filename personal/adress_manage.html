@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>地址管理</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/jsonselect.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js"></script>
+		<script type="text/javascript" src="../js/token.js"></script>
+		<script type="text/javascript" src="../js/address_manager.js"></script>
+		<script type="text/javascript" src="../js/area.js"></script>
+		<script type="text/javascript" src="../js/token_success.js"></script>
+	</head>
+	<style>
+		.main {
+			width: 100%;
+			height: auto;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		/*收货地址*/
+		
+		.main_address {
+			width: 100%;
+			height: auto;
+			margin-bottom: 0.2rem;
+			background-color: #fff;
+		}
+		
+		.address {
+			width: 100%;
+			height: auto;
+			background-color: #fff;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.address ul {
+			width: 95%;
+			height: auto;
+			float: left;
+			margin-left: 0.3rem;
+		}
+		
+		.address_loction li {
+			width: 100%;
+		}
+		
+		.address_loction_li {
+			height: 0.8rem;
+			line-height: 0.9rem;
+			color: #333;
+			font-size: 0.3rem;
+		}
+		
+		.address_loction_li_left {
+			float: left;
+			height: 0.6rem;
+			width: auto;
+		}
+		
+		.address_loction_li_right {
+			float: right;
+			height: 0.6rem;
+			width: auto;
+			margin-right: 0.3rem;
+		}
+		
+		.address_loction_lisec {
+			
+			color: #666;
+			font-size: 0.3rem;
+		}
+		.address_defalut{
+			width: .70rem;
+			height: .76rem;
+			position: absolute;
+			right: 0;
+			display: none;
+		}
+		.address_defalut img{
+			width: 100%;
+		}
+		/*选择默认的地址的勾选情况*/
+		
+		.xuanze_moren {
+			width: 100%;
+			height: 1rem;
+			background-color: #FFFFFF;
+			border-top: 0.01rem solid #ebebeb;
+			background: url(../img/gouxuan.png) no-repeat;
+			background-size: 5.3% 39%;
+			background-position: 3% 49%;
+		}
+		
+		.xuanze_moren li {
+			width: 30%;
+			height: 1rem;
+			line-height: 1rem;
+			float: left;
+			font-size: 0.3rem;
+			color: #666666;
+		}
+		
+		.style_xuanzhong_bak {
+			background: url(../img/gouxuan_moren.png) no-repeat top;
+			background-position: 11% 49%;
+			background-size: 19% 43%;
+		}
+		
+		.xuanze_moren li.xuanze_moren_second {
+			width: 21%;
+			float: right;
+		}
+		
+		.xuanze_moren_first span.xuanze_moren_span_first {
+			width: 0.7rem;
+		}
+		
+		.xuanze_moren_first span {
+			float: left;
+			height: 1rem;
+		}
+		
+		.xuanze_moren_span {
+			position: relative;
+			margin: 0 0.1rem 0 0.26rem;
+		}
+		
+		.xuanze_moren_span img {
+			width: 0.34rem;
+			height: 0.34rem;
+			margin-top: 0.32rem;
+		}
+		
+		.xuanze_moren_second span {
+			float: left;
+			height: 1rem;
+		}
+		
+		.xuanze_moren_span_second {
+			margin: 0 0.1rem 0 0rem;
+		}
+		
+		.xuanze_moren_span_second img {
+			width: 0.4rem;
+			height: 0.4rem;
+			margin-top: 0.3rem;
+		}
+		
+		.choose_checked {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		/*底部新增地址*/
+		
+		.footer {
+			width: 100%;
+			height: 1rem;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+		}
+		
+		.footer_p {
+			width: 100%;
+			height: 1rem;
+		}
+		
+		.footer_p a {
+			display: inline-block;
+			width: 100%;
+			height: 1rem;
+			line-height: 1rem;
+			color: #fff;
+			background-color: #b61c25;
+			text-align: center;
+			font-size: 0.32rem;
+		}
+		
+		/*模态框*/
+		.modal{
+		    display: none;
+		    width: 100%;
+		    height: 100%;
+		    position: fixed;
+		    left: 0;
+		    top: 0;
+		    z-index: 1000;
+		    background-color: rgba(0,0,0,0.5);
+		}
+		.modal-content{
+		    display: flex;
+		    flex-flow: column nowrap;
+		    justify-content: space-between;
+		    width: 74%;
+		    margin: 50% auto;
+		    background-color:#fff;
+		    -webkit-animation: zoom 0.6s;
+		    animation: zoom 0.6s;
+		    resize: both;
+		    overflow: auto;
+		}
+		@-webkit-keyframes zoom{
+		    from {-webkit-transform: scale(0)}
+		    to {-webkit-transform: scale(1)}
+		}
+		@keyframes zoom{
+		    from {transform: scale(0)}
+		    to {transform: scale(1)}
+		}
+		.modal-body{
+		    box-sizing:border-box;
+		    border-bottom: .01rem solid #ebebeb;
+		}
+		.modal-body h4{ 
+			margin: 0;
+			font-size: .3rem;
+    		text-align: center;
+    		color: #333;
+    		margin-top:.34rem;
+		}
+		.modal-body p{
+			margin: 0;
+			font-size: .26rem;
+		    text-align: center;
+		    color: #666;
+		    margin-bottom: .34rem;
+		}
+		.modal-footer button{
+		    width: 49%;
+			height: .8rem;
+			line-height: .8rem;
+			text-align: center;
+		    font-size: .32rem;
+		    background-color:transparent;
+		}
+		.modal-footer button#cancel{
+			color: #666;
+			float: right;
+		}
+		.modal-footer button#sure{
+			color: #b61c25;
+			float: left;
+			border-right: .01rem solid #ebebeb;
+		}
+	</style>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="per_details.html" class="title_top_first">
+					<img src="../img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">地址管理</span>
+			</div>
+		</header>
+		<div class="main">
+		</div>
+		<footer class="footer">
+			<p class="footer_p">
+				<a href="adress_add.html">
+					新增地址
+				</a>
+			</p>
+		</footer>
+	    <!-- 模态框->删除 -->
+	    <div id="modal" class="modal">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h4>提示</h4>
+					<p>是否要删除地址</p>
+				</div>
+				<footer class="modal-footer">
+					<button id="cancel">取消</button>
+					<button id="sure">确定</button>
+				</footer>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../js/date_address/jquery_area.js"></script>
+	<script>
+		window.jsel = JSONSelect;
+		$(function() {
+			$(".xuanze_moren_first").click(function() {
+				$(".choose_checked").toggle();
+			});
+			//二级小标题
+			$(".main_address").click(function() {
+				$(this).children("ul").addClass("style_xuanzhong_bak").parent().siblings().find("ul").removeClass("style_xuanzhong_bak");
+			});
+			var token = localStorage.getItem('token');
+			var ids_zhi = localStorage.getItem('gong');
+			$.ajax({
+				url: domain_name_url + "/my",
+				type: "GET",
+				dataType: "jsonp", //指定服务器返回的数据类型
+				data: {
+					method: 'getAddress',
+					addressId: ids_zhi,
+					token: token,
+					url_type:'my'
+				},
+				success: function(data) {
+					console.log(data)
+					var arr_zu = data.result.rs;
+					var listhtml = '';
+					for(var i = 0; i < arr_zu.length; i++) {
+						var value = arr_zu[i].delivery_address.replace(/\s/g,"");
+						listhtml += '<div class="main_address">';
+						listhtml += '<div class="address"  id="each_out_div"  data-id=' + arr_zu[i].id + ' onClick="javascript:history.back()" data-name='+arr_zu[i].consignee+' data-phone='+arr_zu[i].consignee_tel+' data-site='+ value + ' data-sites='+arr_zu[i].delivery_addressSec +'>';
+						listhtml += '<ul class="address_loction">';
+						listhtml += '<li class="address_loction_li">';
+						listhtml += '<span class="address_loction_li_left">' + arr_zu[i].consignee + '</span>';
+						listhtml += '<span class="address_loction_li_right">' + arr_zu[i].consignee_tel + '</span>';
+						listhtml += '</li>';
+						listhtml += '<li class="address_loction_lisec">' + arr_zu[i].delivery_address + arr_zu[i].delivery_addressSec +'</li>';
+						listhtml += '</ul>';
+						if(arr_zu[i].is_default==1){
+							listhtml += '<div class="address_defalut" style="display:block">';
+							listhtml += '<img src="../img/default.png">';
+							listhtml += '</div>';
+						}
+						if(arr_zu[i].is_default==0){
+							listhtml += '<div class="address_defalut" style="display:none">';
+							listhtml += '<img src="../img/default.png">';
+							listhtml += '</div>';
+						}
+						
+						listhtml += '</div>';
+						if(arr_zu[i].is_default==1){
+							listhtml += '<ul class="xuanze_moren" style="background:url(../img/selectf.png) no-repeat;background-size: 5.3% 39%;background-position: 3% 49%;">';
+						}
+						if(arr_zu[i].is_default==0){
+							listhtml += '<ul class="xuanze_moren" style="background:url(../img/gouxuan.png) no-repeat;background-size: 5.3% 39%;background-position: 3% 49%;">';
+						}
+						
+						listhtml += '<li class="xuanze_moren_first" >';
+						listhtml += '<span class="xuanze_moren_span_first"></span>';
+						// listhtml += '<span onClick="morenGoodsAddress(' + arr_zu[i].id + ')">设为默认</span>';
+						listhtml += '<span class="morenGoodsAddress" data-id=' + arr_zu[i].id + '>设为默认</span>';
+						listhtml += '</li>';
+						listhtml += '<li class="xuanze_moren_second" id="delete_li" >';
+						listhtml += '<span class="xuanze_moren_span_second">';
+						listhtml += '<img src="../img/shanchu.png" />';
+						listhtml += '</span>';
+						listhtml += '<span class="deleteGoodsAddress" data-id=' + arr_zu[i].id + '>删除</span>';
+						listhtml += '</li>';
+						listhtml += '<li class="xuanze_moren_second" >';
+						listhtml += '<span class="xuanze_moren_span_second">';
+						listhtml += '<img src="../img/bianji.png" />';
+						listhtml += '</span>';
+						listhtml += '<span onClick="compileGoodsAddress(' + arr_zu[i].id + ')">编辑</span>';
+						listhtml += '</li>';
+						listhtml += '</ul>';
+						listhtml += '</div>';
+						
+					}
+					$(".main").html(listhtml);
+				}
+
+			});
+		})
+	</script>
+</html>

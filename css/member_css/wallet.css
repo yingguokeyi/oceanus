@@ -1,0 +1,64 @@
+.main{
+	width: 100%;
+	height: auto;
+	margin-top: 1.01rem;
+	overflow: hidden;
+}
+.Withdrawal_balance{
+	width: 100%;
+	background: #fff;
+	padding: .3rem;
+}
+.balance_title{
+	font-size: .28rem;
+	color: #333;
+}
+.balance_num{
+	font-size: .4rem;
+	color: #e40012;
+	margin-top: .3rem;
+}
+.Withdrawal{
+	width: 100%;
+	height: auto;
+	background-color: #fff;
+	margin-top: .2rem;
+}
+.Withdrawal li{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+}
+a.first_a{
+	display: inline-block;
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #333;
+	font-size: 0.26rem;
+}
+.first_a span.title_content{
+	float: left;
+	margin-left: 0.26rem;
+}
+.first_a span.title_content img{
+	width: .36rem;
+	height: .36rem;
+	vertical-align:middle;
+}
+.first_a span.title_content span{
+	margin-left: .26rem;
+}
+.first_a span.back_span{
+	height: 1rem;
+    float: right;
+    line-height: 1.1rem;
+	margin-right: 0.24rem;
+}
+.back_span img{
+	width: 0.2rem;
+	height: 0.3rem;
+}
+.recording li:nth-child(1){
+	border-bottom: 1px solid #F4F4F4;
+}

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>添加新地址</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/personal/style_address.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/area.js"></script>
+		<script type="text/javascript" src="../js/picker.min.js"></script>
+		<script type="text/javascript" src="../js/city.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js"></script>
+		<script type="text/javascript" src="../js/token.js"></script>
+		<script type="text/javascript" src="../js/jsonselect.js"></script>
+		<script type="text/javascript" src="../js/token_success.js" ></script>
+	</head>
+	<style>
+		.main {
+			width: 100%;
+			height: auto;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		/*收货地址*/
+		
+		.title_tishi {
+			height: 0.7rem;
+			line-height: 0.7rem;
+			color: #999999;
+			font-size: 0.24rem;
+			margin-left: 0.26rem;
+		}
+		
+		.main_infor {
+			width: 100%;
+			/*height: auto;*/
+			height: 10rem;
+		}
+		
+		.main_infor_name {
+			width: 100%;
+			height: 0.9rem;
+			background-color: #FFFFFF;
+			border-bottom: 0.01rem solid #EBEBEB;
+		}
+		
+		.name_li {
+			width: 20%;
+			height: 0.9rem;
+			line-height: 0.9rem;
+			float: left;
+			text-align: center;
+			font-size: 0.3rem;
+			color: #333333;
+		}
+		
+		.name_input {
+			width: 80%;
+		}
+		
+		.name_input input {
+			width: 100%;
+			/*height: 100%;*/
+			color: #333333;
+			background: none;
+			border: none;
+			font-size: 0.28rem;
+			padding: 0;
+		}
+		
+		.name_input a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.name_input img {
+			float: right;
+			margin: 0.28rem 0.3rem;
+			width: 0.25rem;
+			height: 0.35rem;
+		}
+		/*placeholder*/
+		
+		input::-webkit-input-placeholder {
+			/* WebKit browsers*/
+			color: #b3b3b3;
+			font-size: 0.28rem;
+		}
+		
+		input:-moz-placeholder {
+			/* Mozilla Firefox 4 to 18*/
+			color: #b3b3b3;
+			font-size: 0.28rem;
+		}
+		
+		input::-moz-placeholder {
+			/* Mozilla Firefox 19+*/
+			color: #b3b3b3;
+			font-size: 0.28rem;
+		}
+		
+		input:-ms-input-placeholder {
+			/* Internet Explorer 10+*/
+			color: #b3b3b3;
+			font-size: 0.28rem;
+		}
+		
+		.textarea_address {
+			width: 100%;
+			height: 95%;
+			outline: none;
+			border: none;
+			font-size: 0.28rem;
+			color: #333333;
+		}
+		/*选择默认的地址的勾选情况*/
+		
+		.xuanze_moren {
+			width: 100%;
+			height: 1rem;
+			background-color: #FFFFFF;
+			margin-top: 0.2rem;
+		}
+		
+		.xuanze_moren li {
+			width: 30%;
+			height: 1rem;
+			line-height: 1rem;
+			float: left;
+			font-size: 0.3rem;
+			color: #666666;
+		}
+		
+		.xuanze_moren_first span {
+			float: left;
+			height: 1rem;
+		}
+		
+		.xuanze_moren_span {
+			position: relative;
+			margin: 0 0.1rem 0 0.26rem;
+		}
+		
+		.xuanze_moren_span img {
+			width: 0.34rem;
+			height: 0.34rem;
+			margin-top: 0.32rem;
+		}
+		
+		.choose_checked {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		/*底部完成*/
+		
+		/*.footer {
+			width: 100%;
+			height: 1rem;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+		}
+		*/
+		.footer_p {
+			width: 94%;
+			height: 1rem;
+			margin: .2rem auto 0;
+		}
+		
+		.footer_p a {
+			display: inline-block;
+			width: 100%;
+			height: 1rem;
+			line-height: 1rem;
+			color: #fff;
+			background-color: #b61c25;
+			text-align: center;
+			font-size: 0.32rem;
+			border-radius: .06rem;
+		}
+		
+		.picker {
+			z-index: 100000000;
+		}
+		
+		.picker .picker-panel .wheel-wrapper .wheel {
+			font-size: .3rem;
+		}
+	</style>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="adress_manage.html" class="title_top_first">
+					<img src="../img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">添加新地址</span>
+			</div>
+		</header>
+		<div class="main iphone">
+			<!-- <p class="title_tishi">请使用您的真实姓名，否则订单将无法发出</p> -->
+			<div class="main_infor browser">
+				<ul class="main_infor_name">
+					<li class="name_li">收货人</li>
+					<li class="name_li name_input">
+						<input type="text" placeholder="请填写真实姓名" id="true_name" />
+					</li>
+				</ul>
+				<ul class="main_infor_name">
+					<li class="name_li">手机号</li>
+					<li class="name_li name_input">
+						<input type="number" maxlength="11" placeholder="请输入手机号" id="true_phone" />
+					</li>
+				</ul>
+				<ul class="main_infor_name express-area">
+					<li class="name_li">选择地区</li>
+					<li class="name_li name_input">
+						<a href="javascript:;" id="expressArea">
+							<!--<input type="text" >-->
+							<dl>
+
+								<dd style="text-align: left; font-size:.28rem;" id='cityResult3'>请选择</dd>
+							</dl>
+						</a>
+					</li>
+				</ul>
+				<ul class="main_infor_name">
+					<li class="name_li">详细地址</li>
+					<li class="name_li name_input">
+						<textarea class="textarea_address" id="textarea_adr"></textarea>
+					</li>
+				</ul>
+				<ul class="main_infor_name">
+					<li class="name_li">邮编</li>
+					<li class="name_li name_input">
+						<input type="number" id="youbian" />
+					</li>
+				</ul>
+				<ul class="xuanze_moren">
+					<li class="xuanze_moren_first">
+						<span class="xuanze_moren_span">
+							<img src="../img/gouxuan.png" class="" />
+							<img src="../img/selectf.png"  class="choose_checked" style="display: none;"/>
+						</span>
+						<span class="set_default">设为默认</span>
+					</li>
+				</ul>
+				<p class="footer_p">
+					<a href="javascript:;" id="submit_add">
+						完成
+					</a>
+				</p>
+				
+			</div>
+		</div>
+		<!-- <footer class="footer">
+			<p class="footer_p">
+				<a href="javascript:;" id="submit_add">
+					完成
+				</a>
+			</p>
+		</footer> -->
+	</body>
+	<script type="text/javascript">
+		window.jsel = JSONSelect;
+		var ids = null;
+		var isdefault = 0;
+		var areaCode;//邮编
+		$(function() {
+			var newAddress = {
+				'true_name': "",
+				'true_phone': '',
+				'address': '',
+				'textarea_adr': ''
+			};
+			// 地区选择
+			$(document).on("click", "#expressArea dl dd", function() {
+				addaddress(this);
+			});
+			function addaddress(dom) {
+				var first = []; /* 省，直辖市 */
+				var second = []; /* 市 */
+				var third = []; /* 镇 */
+
+				var selectedIndex = [0, 0, 0]; /* 默认选中的地区 */
+
+				var checked = [0, 0, 0]; /* 已选选项 */
+
+			function creatList(obj, list) {
+				obj.forEach(function(item, index, arr) {
+					var temp = new Object();
+					temp.text = item.name;
+					temp.value = index;
+					list.push(temp);
+				})
+			}
+				creatList(city, first);
+			if(city[selectedIndex[0]].hasOwnProperty('sub')) {
+				creatList(city[selectedIndex[0]].sub, second);
+			}else {
+				second = [{
+					text: '',
+					value: 0
+				}];
+			}
+
+			if(city[selectedIndex[0]].sub[selectedIndex[1]].hasOwnProperty('sub')) {
+				creatList(city[selectedIndex[0]].sub[selectedIndex[1]].sub, third);
+			} else {
+				third = [{
+					text: '',
+					value: 0
+				}];
+			}
+
+			var picker = new Picker({
+				data: [first, second, third],
+				selectedIndex: selectedIndex,
+				title: ''
+			});
+
+			picker.on('picker.select', function(selectedVal, selectedIndex) {
+				var text1 = first[selectedIndex[0]].text;
+				var text2 = second[selectedIndex[1]].text;
+				var text3 = third[selectedIndex[2]] ? third[selectedIndex[2]].text : '';
+
+				$(dom).html(text1 + ' ' + text2 + ' ' + text3);
+				newAddress.address = (text1 + ' ' + text2 + ' ' + text3);
+			});
+
+			picker.on('picker.change', function(index, selectedIndex) {
+				if(index === 0) {
+					firstChange();
+				} else if(index === 1) {
+					secondChange();
+				}
+
+				function firstChange() {
+					second = [];
+					third = [];
+					checked[0] = selectedIndex;
+					var firstCity = city[selectedIndex];
+					if(firstCity.hasOwnProperty('sub')) {
+						creatList(firstCity.sub, second);
+
+						var secondCity = city[selectedIndex].sub[0]
+						if(secondCity.hasOwnProperty('sub')) {
+							creatList(secondCity.sub, third);
+						} else {
+							third = [{
+								text: '',
+								value: 0
+							}];
+							checked[2] = 0;
+						}
+					} else {
+						second = [{
+							text: '',
+							value: 0
+						}];
+						third = [{
+							text: '',
+							value: 0
+						}];
+						checked[1] = 0;
+						checked[2] = 0;
+					}
+
+					picker.refillColumn(1, second);
+					picker.refillColumn(2, third);
+					picker.scrollColumn(1, 0)
+					picker.scrollColumn(2, 0)
+				}
+
+				function secondChange() {
+					third = [];
+					checked[1] = selectedIndex;
+					var first_index = checked[0];
+					if(city[first_index].sub[selectedIndex].hasOwnProperty('sub')) {
+						var secondCity = city[first_index].sub[selectedIndex];
+						creatList(secondCity.sub, third);
+						picker.refillColumn(2, third);
+						picker.scrollColumn(2, 0)
+					} else {
+						third = [{
+							text: '',
+							value: 0
+						}];
+						checked[2] = 0;
+						picker.refillColumn(2, third);
+						picker.scrollColumn(2, 0)
+					}
+				}
+
+			});
+
+			picker.on('picker.valuechange', function(selectedVal, selectedIndex) {
+				console.log(selectedVal);
+				console.log(selectedIndex);
+			});
+			picker.show();
+			}
+			// 姓名验证
+			$(document).on("blur", "#true_name", function() {
+				var reg = /^[A-Za-z0-9\u4e00-\u9fa5]{1,8}$/;
+				var true_name = $(this).val().replace(/\s+/g, "");
+				newAddress.true_name = true_name;
+				// console.log(unusername);
+				if(!reg.test(true_name)) {
+					layer.open({
+						content: '请输入正确姓名',
+						style: 'background-color:#fff; color:#666; border:none;font-size:0.3rem;', //自定风格
+						time: 2
+					});
+				} else {
+
+				}
+			});
+			// 手机号验证
+			$(document).on("blur", "#true_phone", function() {
+				console.log(1);
+				var reg = /^1(3|4|5|7|8)\d{9}$/;
+				var true_phone = $(this).val().replace(/\s+/g, "");
+				newAddress.true_phone = true_phone;
+				if(!reg.test(true_phone)) {
+					layer.open({
+						content: '手机号格式不正确',
+						style: 'background-color:#fff; color:#666; border:none;font-size:0.3rem;', //自定风格
+						time: 1
+					});
+				} else {
+
+				}
+			});
+			
+			// 验证详细地址
+			$(document).on("blur", "#textarea_adr", function() {
+				var textarea_adr = $(this).val().replace(/\s+/g, "");
+				newAddress.textarea_adr = textarea_adr;
+			});
+			//设置默认
+			$(document).on('click','.set_default',function(){
+				$('.choose_checked').css('display','block');
+				if($('.choose_checked').css('display','block')){
+					isdefault = 1;
+				}else{
+					isdefault = 0;
+				}	
+			})
+			
+			
+			//从本地中取出token				
+			var token = localStorage.getItem("token");
+			var code = localStorage.getItem('yard');
+			$("#submit_add").click(function() {
+				if(newAddress.true_name == '') {
+					layer.open({
+						content: '请输入姓名',
+						skin: 'msg', //自定风格
+						time: 2
+					});
+					return false;
+				}
+				if(newAddress.true_phone == '') {
+					layer.open({
+						content: '请输入手机号',
+						skin: 'msg',
+						time: 2
+					});
+					return false;
+				} 
+				if(newAddress.address == "") {
+					layer.open({
+						content: '请输入地区',
+						skin: 'msg',
+						time: 2
+					});
+					return false;
+				} 
+				if(newAddress.textarea_adr == "") {
+					layer.open({
+						content: '请输入详细街道地址',
+						skin: 'msg',
+						time: 2
+					});
+					return false;
+				}
+				var shuju = {
+					method: 'addAddress',
+					deliveryAddress: newAddress.address,
+					deliveryAddressSec: newAddress.textarea_adr,
+					consignee: newAddress.true_name,
+					consigneeTel: newAddress.true_phone,
+					addressName: '公司',
+					districtCode: '',
+					isDefault: isdefault,
+					token: token,
+					url_type:"my"
+				}
+				$.ajax({
+					url: domain_name_url + "/my",
+					type: "GET",
+					dataType: "jsonp", //指定服务器返回的数据类型
+					data: shuju,
+					success: function(data) {
+						var result = JSON.stringify(data); //json对象转成字符串
+						ids = jsel.match('.ids', data.result);
+						var ids_zhi = data.result.ids[0];
+						sStorage = window.localStorage; //本地存题目
+						sStorage.gong = ids_zhi;
+						layer.open({
+							content: '添加地址成功',
+							skin: 'msg',
+							time: 2 //2秒后自动关闭
+						});
+						setTimeout("location.href='adress_manage.html'", 1000);
+						
+					}
+
+				});
+				
+			});
+		})
+	</script>
+</html>

@@ -1,0 +1,180 @@
+/*头部*/
+header{
+	width: 100%;
+	height: 1.9rem;
+	background-color: #fff;
+	border-bottom: 0.01rem solid #ebebeb;
+}
+/*个人中心标题*/
+.title_top{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #333;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+.title_top span{
+	width: 32%;
+    height: 1rem;
+    float: left;
+    font-size: 0.34rem;
+}
+.title_top a.title_top_first{
+	width: 32%;
+	height: 0.85rem;
+	float: left;
+	text-align: left;
+	margin-left: 3%;
+}
+.title_top .hea_img{
+	width: 0.5rem;
+	height: 0.5rem;
+	vertical-align: middle;
+}
+/*搜索商品框*/
+.search{
+	width: 100%;	
+	height: 0.7rem;
+	margin-top: .1rem;
+}
+.search_goods{
+	height: 0.5rem;
+	border: none;
+    background: none;
+    outline: none;
+}
+/*搜索商品结果*/
+.a_sousuo{
+    display: inline-block;
+    width: 6.5rem;
+    height: 0.7rem;
+    background-color: #f5f5f5;
+    border-radius: 0.06rem;
+    float: left;
+    margin-left: 0.5rem;
+    line-height: 0.7rem;
+    font-size: 0.26rem;
+    color: #999;
+}
+.a_sousuo span{
+	float: left;
+}
+.content img{
+	/*vertical-align: middle;*/
+    width: 0.28rem;
+    height: .28rem;
+    margin: 0.15rem;
+    float: left;
+	margin-top: .2rem;
+}
+/*main部分*/
+.main{
+	width: 100%;
+	height: auto;
+}
+/*main最近搜索*/
+.main_zuijin{
+	width: 100%;
+	height: auto;
+}
+.main_zuijin_title{
+	width: 100%;
+	height: 1.1rem;
+	background-color: #FFFFFF;
+	line-height: 1.1rem;
+    font-size: 0.32rem;
+    font-family: PingFangSC-Regular;
+}
+.main_zuijin_title_span{
+	margin-left: 0.3rem;
+	float: left;
+}
+.main_zuiji_contents{
+	width: 100%;
+	height: auto;
+	background-color: #FFFFFF;
+	padding: 0 .3rem;
+}
+.main_zuiji_contents_btn{
+	width: auto;
+	height: 0.6rem;
+	background: none;
+	border: none;
+	background-color: #f5f5f5;
+	margin: 0.1rem;
+	padding: 0.1rem;
+	border: 0.01rem solid #EBEBEB;
+	color: #999;
+
+}
+/*main热门搜索*/
+.main_remen{
+	width: 100%;
+	height: auto;
+	margin-top: 0.6rem;
+}
+.main_remen_title{
+	width: 100%;
+	height: 1.1rem;
+	background-color: #FFFFFF;
+	line-height: 1.1rem;
+    font-size: 0.34rem;
+    font-family: PingFangSC-Regular;
+}
+.main_remen_title_span{
+	margin-left: 0.3rem;
+	float: left;
+}
+.main_remen_title_btn{
+	width: 1rem;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    color: #A5772C;
+    background: none;
+    border: 0.01rem solid #A5772C;
+    font-size: 0.22rem;
+    border-radius: 0.05rem;
+    float: right;
+    margin: 0.35rem 0.3rem 0 0;
+}
+.main_remen_contents{
+	width: 100%;
+	height: auto;
+	background-color: #FFFFFF;
+}
+.main_remen_contents_btn{
+	width: auto;
+	height: 0.6rem;
+	background: none;
+	border: none;
+	background-color: #f5f5f5;
+	margin: 0.1rem;
+	padding: 0.1rem;
+	border: 0.01rem solid #EBEBEB;
+}
+/*main清空搜索的按钮*/
+.main_qingkong{
+	width: 100%;
+	height: auto;
+	margin-top: 0.6rem;
+}
+.main_qingkong_title{
+	width: 100%;
+	height: 1.1rem;
+	background-color: #fff;
+	line-height: 1.1rem;
+    font-size: 0.34rem;
+    font-family: PingFangSC-Regular;
+}
+.main_qingkong_title_btn{
+	width: 6.9rem;
+    height: 0.9rem;
+    background: none;
+    border: none;
+    margin: 0 0.3rem;
+    border-radius: 0.05rem;
+    font-size: 0.32rem;
+    color: #999;
+    /*background-color: #b61c25;*/
+}

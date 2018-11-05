@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/personal/my_fans.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js"></script>
+		<title>我的粉丝</title>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="../mine.html" class="title_top_first">
+					<img src="../img/back1.png"  class="hea_img"/>
+				</a>
+				<span class="title_top_center">我的粉丝</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="main_top">
+				<p>粉丝量</p>
+				<p><span></span>(人)</p>
+			</div>
+			<div class="main_cont">
+				<ul class="fans_title">
+					<li id='currentType0' status='1'>
+						<a href="javascript:;" class="fans_a tabhover">
+							<p><span id="pt_num"></span>人</p>
+							<p>普通会员</p>
+							<p class="fans_line"></p>
+						</a>
+					</li>
+					<li id='currentType1' status='2'>
+						<a href="javascript:;" class="fans_a">
+							<p><span id="samll_num"></span>人</p>
+							<p>小掌柜</p>
+							<p class="fans_line"></p>
+						</a>
+					</li>
+					<li id='currentType2' status='3'>
+						<a href="javascript:;" class="fans_a">
+							<p><span id="big_num"></span>人</p>
+							<p>大掌柜</p>
+							<p class="fans_line"></p>
+						</a>
+					</li>
+				</ul>
+				<ul class="tabcontent_title">
+					<li>
+						<p class="tabcontent_title_name">粉丝名称</p>
+						<p class="tabcontent_title_time">邀请时间</p>
+					</li>
+				</ul>
+				<div class="tabcontent" id="orderContent">
+					<ul class="tabcontent_title tabcontent_text">
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/personal/my_fans.js"></script>
+</html>	

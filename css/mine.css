@@ -1,0 +1,316 @@
+.main {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    position: relative;
+   	margin-top: 1rem;
+}
+/*个人中心标题结束*/
+.main_top{
+	width: 100%;
+	height: 3rem;
+	background: #b61c25;
+}
+.hea_ul{
+	width: 100%;
+	height: 2rem;
+}
+.hea_ul li{
+	height: 2rem;
+	float: left;
+}
+.hea_ul li.first{
+	width: 17%;
+	margin-left: .3rem;
+}
+.hea_ul li.first a{
+	display: inline-block;
+    width: 100%;
+    height: 1.2rem;
+    margin-top: 0.1rem;
+    border-radius: 0.5rem;
+}
+.hea_ul li.first img{
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.hea_ul li.second{
+	width: 58%;
+	color: #fff;
+}
+.second_nickname{
+	width: 96%;
+	margin-left: .24rem;
+	margin-top: .3rem;
+}
+.sec_span{
+	width: 96%;
+    line-height: 0.5rem;
+    font-size: 0.26rem;
+    margin-left: .24rem;
+    color: #fff;
+    text-overflow:ellipsis;/*表示文本超出用省略号代替*/
+
+	white-space:nowrap;/*表示文本不换行；*/
+
+	overflow:hidden;/*表示超出隐藏；*/
+}
+.sec_span .copy{
+	width: .64rem;
+	height: .32rem;
+	border-radius: .04rem;
+	border:.01rem solid #fff;
+	font-size: .24rem;
+	color: #fff;
+	line-height: .32rem;
+	text-align: center;
+	background: transparent;
+	margin-left: .16rem;
+}
+li.second a{
+	display: inline-block;
+	width: 80%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #fff;
+	font-size: 0.28rem;
+	margin-left: 0.4rem;
+}
+li.third{
+	width: 20%;
+	line-height: 1rem;
+	color: #fff;
+	font-size: .2rem;
+}
+.third_span{
+	margin-left: .15rem;
+}
+.third_span img{
+	width: .32rem;
+	height: .32rem;
+	vertical-align: middle;
+}
+/*我的订单*/
+.main_bottom{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top:2.5rem;
+	margin-bottom: 1rem;
+}
+.main_order{
+	width: 100%;
+	height: .9rem;
+	line-height: .9rem;
+	background: #fff;
+	border-top-left-radius:.5rem;
+	border-top-right-radius:.5rem;
+	padding: 0 .3rem;
+	overflow: hidden;
+	border-bottom:1px solid #F9F9F9;
+}
+.main_order span{
+	color: #333;
+	font-size: .28rem;
+}
+.main_order .order_mine{
+	float: left;
+}
+.main_order .order_look{
+	float: right;
+	margin-right: .1rem;
+	color: #666;
+}
+.main_order .order_img{
+	width: .14rem;
+	height: .26rem;
+	margin-left: .14rem;
+	margin-top: .3rem;
+}
+/*收藏商品/商品关注/我的足迹*/
+.collect_goods{
+	width: 100%;
+	height: auto;
+}
+.collect_goods_coll{
+	width: 100%;
+	height: 1.2rem;
+	background-color: #FFFFFF;
+}
+.collect_goods_coll li{
+	width: 33.3%;
+	height: 0.6rem;
+	float: left;
+	color: #666666;
+	text-align: center;
+	font-size: 0.26rem;
+}
+.collect_goods_coll li.first{
+	line-height: 0.7rem;
+	font-size: 0.32rem;
+}
+.collect_goods_coll li.second{
+	line-height: 0.5rem;
+	font-family: PingFangHK-Regular;
+}
+/*全部待支付等，我的订单*/
+.collect_goods_order{
+	width: 100%;
+    height: 1.5rem;
+    background-color: #FFFFFF;
+    margin-bottom: 0.2rem;
+}
+.collect_goods_order li{
+	width: 25%;
+    height: 1.5rem;
+    line-height: 0.15rem;
+    text-align: center;
+    float: left;
+}
+.collect_goods_order a{
+	display: inline-block;
+	width: 100%;
+	height: 1.5rem;
+	font-size: 0.26rem;
+	color: #666;
+	line-height: 0.4rem;
+}
+.collect_goods_order_span{
+	width: 0.56rem;
+	height: 0.5rem;
+	margin-top: 0.3rem;
+}
+.collect_goods_order_span img{
+	width: 100%;
+	height: 100%;
+}
+/*中间部分*/
+.list_content_shop{
+	width: 100%;
+	height: auto;
+	background-color: #fff;
+}
+.list_content_shop ul{
+	width: 100%;
+	height: auto;
+}
+.list_content_shop li{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	border-bottom: 1px solid #F4F4F4;
+}
+a.first_a{
+	display: inline-block;
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #333;
+	font-size: 0.3rem;
+}
+.first_a span.title_content{
+	float: left;
+	margin-left: 0.3rem;
+}
+.first_a span.title_content img{
+	width: .44rem;
+	height: .42rem;
+	vertical-align:middle;
+}
+.first_a span.title_content span{
+	margin-left: .3rem;
+}
+.first_a span.back_span{
+	height: 1rem;
+    float: right;
+    line-height: 1.1rem;
+	margin-right: 0.24rem;
+}
+.back_span img{
+	width: 0.2rem;
+	height: 0.3rem;
+}
+.first_bg{
+	width: 100%;
+	height: .2rem;
+	background: #f9f9f9;
+}
+/*登录弹框*/
+.warm_title{
+	text-align: center;
+	border-bottom: .01rem solid #ebebeb;
+}
+.warm_title h4{
+	margin: 0;
+	font-size: .3rem;
+	color: #333;
+	margin-top:.34rem;
+}
+.warm_title p{
+	margin: 0;
+	font-size: .26rem;
+	color: #666;
+	margin-bottom: .34rem;
+}
+.warm_choose a{
+	display: inline-block;
+	width: 49%;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	font-size: .32rem;
+}
+.warm_cancel{
+	color: #666;
+	float: right;
+}
+.warm_login{
+	color: #b61c25;
+	float: left;
+	border-right: .01rem solid #ebebeb;
+}
+/*联系客服*/
+.service_choose{
+	width: 100%;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+}
+.service_choose a{
+	font-size: .32rem;
+	color: #b61c25;
+}
+/*我的粉丝*/
+.main_fans{
+	width: 100%;
+	background: #fff;
+	margin-bottom: .2rem;
+}
+.main_fans ul{
+	width: 100%;
+	height: 1.4rem;
+	overflow: hidden;
+	padding: .3rem 0;
+}
+.main_fans ul li{
+	width: 33.33%;
+	float: left;
+	text-align: center;
+}
+.main_fans ul li+li{
+	border-left: .01rem solid #ebebeb;
+}
+.main_fans ul li p:nth-child(1){
+	color: #333;
+	font-size: .3rem;
+}
+.main_fans ul li p:nth-child(2){
+	color: #666;
+	font-size: .24rem;
+	margin-top: .1rem;
+}
+/* iphone6 plus竖屏*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) { 
+	
+
+}

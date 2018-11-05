@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>VIP商品-列表</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/member_css/vip_goods.css" />
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js"></script>
+		<script type="text/javascript" src="../js/jsonselect.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="../member.html" class="title_top_first">
+					<img src="../img/back.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">VIP商品列表</span>
+			</div>
+		</header>
+		<div class="main">
+			<p class="vip_bak">
+				<img src="../img/img_member/VIP_bak.png" />
+			</p>
+			<ul class="main_content_ul">
+				<li class="main_content_li">
+					<a href="javascript:;" class="main_content_a">
+						<span class="main_content_a_left">
+							<img src="img/goods_list.jpg"/>
+						</span>
+						<span class="main_content_a_right">
+							<span class="m_c_a_r_top">
+									<span class="first">VIP礼包</span>
+									【年货节】沐光医用退热贴儿童4片装物理降温
+							</span>
+							<span class="m_c_a_r_center">
+								分页油脂 马油洗发护发2合1
+							</span>
+							<span class="m_c_a_r_bottom">￥8.00</span>
+						</span>
+						
+					</a>
+				</li>
+				<li class="main_content_li">
+					<a href="javascript:;" class="main_content_a">
+						<span class="main_content_a_left">
+							<img src="img/goods_list.jpg"/>
+						</span>
+						<span class="main_content_a_right">
+							<span class="m_c_a_r_top">
+									<span class="first">VIP礼包</span>
+									【年货节】沐光医用退热贴儿童4片装物理降温
+							</span>
+							<span class="m_c_a_r_center">
+								分页油脂 马油洗发护发2合1
+							</span>
+							<span class="m_c_a_r_bottom">￥8.00</span>
+						</span>
+						
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+	</body>
+	<script>
+		window.jsel = JSONSelect;
+		$(function() {
+			/*低价打折商品 grounpID=6*/
+			//				$.ajax({
+			//					url: domain_name_url + "/classify",
+			//					type: "GET",
+			//					dataType: "jsonp", //指定服务器返回的数据类型
+			//					data: {
+			//						method: 'getGoodsListByCategoryId',
+			//						dictDataValue: '104001002',
+			//						begin: '1',
+			//						end: '10'
+			//					},
+			//					success: function(data) {
+			//						console.log(data)
+			//
+			//						var goodslist = jsel.match('.getGoodsList', data.result.rs);
+			//						var img = jsel.match('.image', goodslist[0].result.rs);
+			//						var marpri = jsel.match('.market_price', goodslist[0].result.rs);
+			//						var spname = jsel.match('.spu_name', goodslist[0].result.rs);
+			//						var goods = goodslist[0].result.rs;
+			//						console.log(goodslist[0].result.rs)
+			//						console.log(img)
+			//						console.log(marpri)
+			//						console.log(spname)
+			//						var listhtml = '';
+			//						for(var i = 0; i < goods.length; i++) {
+			//							listhtml += '<ul class="main_content_ul">' +
+			//								'				<li class="main_content_li">' +
+			//								'					<a href="javascript:;" class="main_content_a">' +
+			//								'						<span class="main_content_a_left">' +
+			//								'							<img src=' + img[i] + '/>' +
+			//								'						</span>' +
+			//								'						<span class="main_content_a_right">' +
+			//								'							<strong class="m_c_a_r_top">' +
+			//								spname[i] +
+			//								'							</strong>' +
+			//								'							<span class="m_c_a_r_center">' +
+			//								'								淘宝价￥8.90' +
+			//								'								已售  2418 ' +
+			//								'							</span>' +
+			//								'							<span class="m_c_a_r_bottom">' +
+			//								'								<span class="m_c_a_r_bottomleft">'+marpri[i]+'（<font class="font">￥4.64</font>）</span>' +
+			//								'								<span class="m_c_a_r_bottomright">返现<font class="font">￥4.64</font></span>' +
+			//								'							</span>' +
+			//								'						</span>' +
+			//								'					</a>' +
+			//								'				</li>' +
+			//								'			</ul>';
+			//						}
+			//						$(".main").html(listhtml)
+			//
+			//					}
+			//
+			//				});
+		})
+	</script>
+</html>

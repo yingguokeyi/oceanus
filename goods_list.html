@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品列表（会员分类）</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/header_common.css" />
+		<link rel="stylesheet" href="css/list_goods.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/font-size.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/global_variable.js"></script>
+		<script type="text/javascript" src="js/jsonselect.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="classify.html" class="title_top_first">
+					<img src="img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">商品列表</span>
+			</div>
+		</header>
+		<div class="main">
+			
+		</div>
+	</body>
+	<script>
+		window.jsel = JSONSelect;
+		$(function() {
+			function accDiv(arg1, arg2) {
+				var t1 = 0,
+					t2 = 0,
+					r1, r2;
+				try {
+					t1 = arg1.toString().split(".")[1].length;
+				} catch(e) {}
+				try {
+					t2 = arg2.toString().split(".")[1].length;
+				} catch(e) {}
+				with(Math) {
+					r1 = Number(arg1.toString().replace(".", ""));
+					r2 = Number(arg2.toString().replace(".", ""));
+					return(r1 / r2) * pow(10, t2 - t1);
+				}
+			}
+			var uri = localStorage.getItem('uri_list');
+			/*低价打折商品 grounpID=6*/
+			$.ajax({
+				url: domain_name_url + "/classify",
+				type: "GET",
+				dataType: "jsonp", //指定服务器返回的数据类型
+				data: {
+					method: 'getGoodsListByCategoryId',
+					dictDataValue: uri,
+					begin: '1',
+					end: '10'
+				},
+				success: function(data) {
+					console.log(data)
+					var getgoodslist = data.result.rs[0].getGoodsList;
+					var goodslist = getgoodslist.result.rs
+					var goodslistid = jsel.match('.id', goodslist);
+					var goodslistimg = jsel.match('.image', goodslist);
+					var goodslistattribute = jsel.match('.spu_attribute', goodslist);
+					var goodslistprice = jsel.match('.market_price', goodslist);
+					var goodslistname = jsel.match('.spu_name', goodslist);
+					var goodslistcash = jsel.match('.cash_back', goodslist);
+					var goodslistmember = jsel.match('.member_parent', goodslist);
+					var goodslistoutsider = jsel.match('.outsider_parent', goodslist);
+					var memberLevel = JSON.parse(localStorage.getItem('memberLevel'));
+					var parentUserHasMark = JSON.parse(localStorage.getItem('parentUserHasMark'));
+					var listhtml = '';
+					for(var i = 0; i < goodslist.length; i++) {
+						listhtml += '<ul class="main_content_ul" data-id='+goodslistid[i]+'>';
+						listhtml += '<li class="main_content_li">';
+						listhtml += '<a href="javascript:;" class="main_content_a">';
+						listhtml += '<span class="main_content_a_left">';
+						listhtml += '<img src=' + goodslistimg[i] + ' />';
+						listhtml += '</span>';
+						listhtml += '<span class="main_content_a_right">';
+						listhtml += '<span class="m_c_a_r_top">' + goodslistname[i] +'</span>';
+						listhtml += '<span class="m_c_a_r_attr">'+goodslistattribute[i]+'</span>';
+						listhtml += '<span class="m_c_a_r_bottom">';
+						listhtml += '<span class="m_c_a_r_bottomleft">￥' + (goodslistprice[i]/100).toFixed(2)  + '</span>';
+						
+						if(memberLevel == 0 && goodslistoutsider[i] != 0) {
+							listhtml += '<span class="m_c_a_r_bottomright">返现';
+							listhtml += '<span style="color:#b61c25">￥' + ((goodslistcash[i]*goodslistoutsider[i])/10000).toFixed(2)  + '</span></span>';
+						}
+						if(memberLevel != 0 && goodslistmember[i] != 0) {
+							listhtml += '<span class="m_c_a_r_bottomright">返现';
+							listhtml += '<span style="color:#b61c25">￥' + ((goodslistcash[i]*goodslistmember[i])/10000).toFixed(2)  + '</span></span>';
+						}
+						listhtml += '</span>';
+						listhtml += '</span>';
+						listhtml += '</span>';
+						listhtml += '</a>';
+						listhtml += '</li>';
+						listhtml += '</ul>';
+						
+					}
+					$(".main").html(listhtml)
+					$('.main_content_ul').click(function(){
+						var uri = $(this).data('id');
+						sStorage = window.localStorage; //本地存题目
+						sStorage.uri_goods = uri;
+						var gurl = window.location.href;
+						localStorage.setItem('gurl', window.location.href);
+						location.href = 'goods_details.html?spuId=' + uri +'&url=' + gurl;
+					})
+				}
+				
+
+			});
+		})
+	</script>
+</html>

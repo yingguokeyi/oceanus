@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>入账记录</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/member_css/accounting _record.css" />
+	    <link rel="stylesheet" href="../css/swiper.min.css" />
+	    <script type="text/javascript" src="../js/jquery-1.10.2.min.js" ></script>
+	    <script type="text/javascript" src="../js/font-size.js" ></script>
+	    <script type="text/javascript" src="../js/swiper.min.js" ></script>
+	    <script type="text/javascript" src="../js/global_variable.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a onclick="history.go(-1);return false;" class="title_top_first">
+					<img src="../img/back1.png"  class="hea_img"/>
+				</a>
+				<span class="title_top_center">入账记录</span>
+			</div>
+		</header>
+		<div class="main">
+		<!-- 有数据 -->
+			<ul class="accounting_record_ul">
+				<li>
+					<div class="accounting_record_title">
+						<p class="title_text">回填单奖励金</p>
+						<p class="title_money">+<span>130.00</span></p>
+					</div>
+					<div class="accounting_record_time">
+						<p class="time_earnings">收益时间 :<span></span></p>
+						<p class="time_record">入账时间 :<span></span></p>
+					</div>
+				</li>
+				<li>
+					<div class="accounting_record_title">
+						<p class="title_text">回填单奖励金</p>
+						<p class="title_money">+<span>130.00</span></p>
+					</div>
+					<div class="accounting_record_time">
+						<p class="time_earnings">收益时间 :<span></span></p>
+						<p class="time_record">入账时间 :<span></span></p>
+					</div>
+				</li>
+			</ul>
+			<!-- 无数据 -->
+			<div class="anonymous">
+				<p>暂时还没有入账记录哦！</p>
+				<button type="button" id='make'>去赚钱</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/member_js/accounting _record.js" ></script>
+</html>	

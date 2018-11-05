@@ -1,0 +1,162 @@
+<code class="language-html"><!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/header_common.css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/details_goods.css" />
+		<link rel="stylesheet" href="layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/font-size.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/jsonselect.js"></script>
+		<script type="text/javascript" src="js/global_variable.js"></script>
+		<script type="text/javascript" src="js/url_param.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a class="title_top_first">
+					<img src="img/back1.png" class="hea_img" style="margin-top:.25rem;" />
+				</a>
+				<span class="title_top_center">商品详情</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="tabcontent">
+				<!-- Swiper -->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+				 <!-- 限时秒抢的标题栏 -->
+				 <div class='redSeal' style="display:block;">
+					<div class='redmark-left'>
+					  <text class='rightDown'>限时秒杀：</text>
+					  <text class='symbol'>￥</text>
+					  <text class='wallet' id="wallet"></text>
+					</div>
+					<div class='redmark-right' id="redmark2" style="display:block;">
+					  <text class='finish'>离开始还有：</text>
+					  <text class='endTime' id="timer"></text>
+					</div> 
+					 <div class='redmark-right' id="redmark3" style="display:block;">
+					  <text class='finish'>离结束还有：</text>
+					  <text class='endTime' id="timer2"></text>
+					</div>                  
+				 </div>
+
+				<div class="main_center">
+					
+				</div>
+				<div class="bg"></div>
+				<!-- 商品详情 -->
+				<div class="product_details">
+					<div class="product_title">
+						<div class="line"></div>
+						<div class="title_details">商品详情</div>
+						<div class="line"></div>
+					</div>
+					<div class="product_table"></div>
+				</div>
+
+				<!-- 图文详情 -->
+				<div class="graphic_details">
+					<div class="product_title">
+						<div class="line"></div>
+						<div class="title_details">图文详情</div>
+						<div class="line"></div>
+					</div>
+					<div class="graphic_details_img">
+
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		<!-- 弹框 -->
+		<div class="cart_tanchuang" style="display: none;">
+			<div class="contentdiv">
+				<span class="Xcontent06 contentspan"><!--<img src="img/X1.png">--></span>
+				<dl class="contentdl">
+					<dd class="contentprice">
+						
+					</dd>
+				</dl>
+				<span class="contentspan_cha"><img src="img/delete.png"></span>
+			</div>
+			<div class="choose_sku">
+			<div class="leixing_div">
+				<div class="leixing_div_p">
+					<p class="leixing_p">装饰类型</p>
+				</div>
+				<div class="leixing_div_ul" style="overflow:hidden;">
+					
+
+				</div>
+
+			</div>
+			<div class="xinghao_div">
+				<div class="xinghao_div_p">
+					<!-- <p class="xinghao_p">型号</p> -->
+				</div>
+				<div class="xinghao_div_ul">
+					
+				</div>
+			</div>
+			<div class="cart_buy border_none">
+				<p class="cart_buy_num">数量</p>
+				<div class="cart_buy_jianjia">
+					<div class="cart_buy_jian">-</div>
+					<form>
+						<input readonly="readonly" class="input cart_buy_input" value="1">
+					</form>
+					<div class="cart_buy_jia title_layer" onclick="onIncrease(this)">+</div>
+				</div>
+
+			</div>
+			</div>
+			<div class="queding_btn">
+				<a>确定</a>
+			</div>
+		</div>
+		<div class="go_back">
+			<img src="img/return.png">
+		</div>
+		<div class="go_top">
+			<img src="img/stick.png">
+		</div>
+		<footer class="footer_cart">
+			<ul class="footer_cart_ul">
+				<li class="footer_commission">
+					<img src='img/share.png'>
+					<span class="commission_sum"></span>
+				</li>
+				<li class="footer_buy">
+					<a class="go_layer">立即购买</a>
+				</li>
+			</ul>
+		</footer>
+		<div id="outerdiv" style="position:fixed;top:0;left:0;background:#000;z-index:99;width:100%;height:100%;display:none;">  
+    		<div id="innerdiv" style="position:absolute;left:0;">  
+        		<img id="bigimg" style="width:100%" src="" />  
+   	 		</div>
+   	 	</div>
+   	</body>
+	<script type="text/javascript" src="js/goods_details.js"></script>
+</html></code>

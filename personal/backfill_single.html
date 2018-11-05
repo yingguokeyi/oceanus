@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>掌达赚回填单</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css">
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/personal/backfill_single.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<link rel="stylesheet" href="../layui/css/layui.css" />
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js"></script>
+		<script type="text/javascript" src="../js/jsonselect.js"></script>
+	</head>
+	<body style="background:#fff;">
+		<header>
+			<div class="title_top">
+				<a href="../mine.html" class="title_top_first">
+					<img src="../img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">掌达赚回填单</span>
+			</div>
+		</header>
+		<div class="single_fill">
+			<div class="single_information">
+				<label>填写回填单信息:</label>
+				<input type="number" maxlength="18" placeholder="请输入掌达赚订单号" value=""  id="odd_numbers" onkeyup="this.value = this.value.substring(0,18)"/>
+			</div>
+			<div class="single_choose">
+				<input type="text" placeholder="请选择商品" value="" class="choose_commodity"  disabled="" />
+				<span class="choose_img"><img src='../img/selectIcon.png'></span>
+			</div>
+		</div>
+		<div class="single_bg"></div>
+		<!-- 上传回填单截图 -->
+		<div class="single_screenshot">
+			<label class="label">上传回填单截图:</label>
+			<div class="pictures">
+				<label class="upload_pictures" id="localImag">
+					<input class="fileInput" id="doc" type="file"  accept="image/*" name="file" style="display:none;" onchange="javascript:setImagePreview();">
+					<img src='../img/autoLoad.png' class="add" id="add">
+					 <img id="preview" src="" width="1.8rem" height="1.8rem" style="display: none;"/>
+				</label>
+				<div class="explanatory">
+					<ul>
+						<li>
+							1、格式必须为png,bmp,jpeg,jpg,gif
+						</li>
+						<li>
+							2、大小不可大于2M
+						</li>
+						<li>
+							3、建议使用png格式图片
+						</li>
+						<li>
+							4、上传截图不允许涉及政治敏感与色情
+						</li>
+						<li>
+							5、上传成功后不支持修改，请检查确认
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="condition_cont">
+			填写信息和上传截图添加任意一项即可
+		</div>
+		<!-- 添加备注 -->
+		<div class="add_note">
+			<label>添加备注:</label>
+			<textarea maxlength="200" placeholder="最多可添加200个字符哦" value="" id="remark" onkeyup="this.value = this.value.substring(0,200)"></textarea>
+		</div>
+		<!-- 提交 -->
+		<div class="single_btn">
+			<button class="submit" type="button" disabled="" id="btn">提交</button>
+		</div>
+		<!-- 选择商品 -->
+		<div class="product_name">
+			<ul>
+				
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<script type="text/javascript" src="../js/backfill_single.js"></script>
+</html>	

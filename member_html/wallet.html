@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的钱包</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/member_css/wallet.css" />
+	    <link rel="stylesheet" href="../css/swiper.min.css" />
+	    <script type="text/javascript" src="../js/jquery-1.10.2.min.js" ></script>
+	    <script type="text/javascript" src="../js/font-size.js" ></script>
+	    <script type="text/javascript" src="../js/swiper.min.js" ></script>
+	    <script type="text/javascript" src="../js/global_variable.js"></script>
+	</head>
+	<body style="background-color: #F9F9F9;">
+		<header>
+			<div class="title_top">
+				<a onclick="history.go(-1);return false;" class="title_top_first">
+					<img src="../img/back1.png"  class="hea_img"/>
+				</a>
+				<span class="title_top_center">我的钱包</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="Withdrawal_balance">
+				<p class="balance_title">账户可提现余额</p>
+				<p class="balance_num" onclick="window.location='withdraw.html'">￥<span>0.00</span></p>
+			</div>
+			<ul class="Withdrawal">
+				<li class="first">
+					<a href="withdraw.html" class="first_a">
+						<span class="title_content">
+						<img src='../img/member/withdraw.png'> 
+							<span>提现</span>
+						</span>
+						<span class="back_span">
+							<img src="../img/xiayiye.png"/>
+						</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="Withdrawal recording">
+				<li class="first">
+					<a href="withdrawal_record.html" class="first_a">
+						<span class="title_content">
+						<img src='../img/member/record.png'> 
+							<span>提现记录</span>
+						</span>
+						<span class="back_span">
+							<img src="../img/xiayiye.png"/>
+						</span>
+					</a>
+				</li>
+				<li class="first">
+					<a href="accounting_record.html" class="first_a">
+						<span class="title_content">
+						<img src='../img/member/account.png'> 
+							<span>入账记录</span>
+						</span>
+						<span class="back_span">
+							<img src="../img/xiayiye.png"/>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/member_js/wallet.js" ></script>
+</html>

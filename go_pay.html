@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>去支付订单</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/confirm_order.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" href="layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="js/font-size.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/jsonselect.js"></script>
+		<script type="text/javascript" src="js/token.js"></script>
+		<script type="text/javascript" src="js/token_success.js"></script>
+		<script type="text/javascript" src="js/global_variable.js"></script>
+		<script type="text/javascript" src="js/url_param.js"></script>
+	</head>
+	<style>
+		.addressDiv {
+			width: 200%;
+			position: relative;
+		}
+		
+		.address {
+			width: 50%;
+			float: left;
+		}
+		
+		.add_address {
+			width: 100%;
+			/*float: left;*/
+		}
+		
+		.message {
+			overflow: hidden;
+		}
+		
+		.clear:after {
+			display: block;
+			clear: both;
+			content: "";
+			visibility: hidden;
+			height: 0
+		}
+		.address ul.address_xiayiye {
+			position: relative;
+		}
+	</style>
+	<body style="background-color: #f9f9f9;">
+		<header>
+			<div class="title_top">
+				<a class="title_top_first">
+					<img src="img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">掌大优选</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="message">
+				<p class="daishouhuo">收货人信息</p>
+				<div class="addressDiv clear">
+					<div class="address">
+						<ul class="address_logo">
+							<li class="address_logo_li">
+								<img src="img/position.png" />
+							</li>
+						</ul>
+						<ul class="address_loction">
+							<li class="address_loction_li">
+								<span class="address_loction_li_left">收货人：<span id="orderName"></span></span>
+								<span class="address_loction_li_right" id="orderTel"></span>
+							</li>
+							<li class="address_loction_lisec">收货地点：<span><span id="orderAddr"></span><span id="orderAddrx"></span></span>
+							</li>
+						</ul>
+						<ul class="address_xiayiye" id="addressID">
+							<li class="address_xiayiye_li">
+								<a href="javascript: ;" class="address_a_guanli compile_layer" onclick="window.location='personal/adress_manage.html'">
+									<img src="img/xiayiye.png" />
+								</a>
+
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			
+			<p class="xintiao">
+			</p>
+			<section class="sec_main">
+				<p class="daishouhuo">支付方式</p>
+				<ul class="sec_main_ul">
+					<li>
+						<a href="javascript:;" class="choose_a">
+							<img src="img/weixinc.png" class="yinlian" /> 微信支付
+							<img src="img/choiceicon.png" class="tacitly" />
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!--支付方式结束-->
+			<div class="goods_list">
+				<p class="goods_list_title">商品列表</p>
+				<div class="shop_info">
+					<div class="shop_info_img">
+						<a href="javascript:;" class="shop_info_img_a">
+						</a>
+					</div>
+					<div class="shop_info_text">
+						
+					</div>
+				</div>
+			</div>
+			<!-- 配送方式 -->
+			<div class="distribution">
+				<ul class="distribution_ul">
+					<li class="distribution_ul_left">
+						配送方式
+					</li>
+					<li class="distribution_ul_right">
+						<span class="distribution_cost">快递</span><span class="distribution_price">￥<i>0.00</i></span>
+					</li>
+				</ul>
+			</div>
+			<div class="news_buyer">
+				<ul class="main_infor_name">
+					<li class="name_li">买家留言</li>
+					<li class="name_li name_input">
+						<textarea placeholder="请输入留言" class="detailDescribValue" id="textArea"></textarea>
+					</li>
+				</ul>
+			</div>
+			<div class="goods_zhuangtaibtn">
+				<span class="goods_zhuangtaibtn_span">
+					
+				</span>
+				<button class="first_btn" type="button" id='btn'>提交订单</button>
+			</div>
+		</div>
+	</body>	
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script>
+	//alert(returnCitySN['cip'] + returnCitySN['cname']);
+		var token = localStorage.getItem('token');
+		window.jsel = JSONSelect;
+		var urlObj = urlparam();
+		console.log(urlObj);
+		var orderNum;
+		var sku_name;//商品名称
+		var sku_id;//商品id
+		var orderType;//商品来源
+		var name;//收货人名字
+		var phone;//收货人电话
+		var address;//收货人地址
+		var remark;//留言
+		var adressnew;
+		//收货地址
+		$.ajax({
+			url: domain_name_url + '/index',
+			type: "GET",
+			dataType: "jsonp", //指定服务器返回的数据类型
+			data: {
+				method: 'getAddress',
+				token: token,
+				url_type: 'index'
+			},
+			success: function(data) {
+				if(data.success==1){
+					name = localStorage.getItem('qname');
+					phone = localStorage.getItem('qphone');
+					address = localStorage.getItem('qaddress');
+					$('#orderName').html(name);
+					$('#orderTel').html(phone);
+					$('#orderAddr').html(address);
+					$('#orderAddrx').html();
+					var res=data.result.rs;
+					for(var i=0;i<res.length;i++){
+						var addid=localStorage.getItem('addid');
+						var addname=localStorage.getItem('addname');
+						var addphone=localStorage.getItem('addphone');
+						var addsite=localStorage.getItem('addsite');
+						var addsites=localStorage.getItem('addsites');
+						if(res[i].id==addid){
+							$("#orderName").html(addname);
+							$("#orderTel").html(addphone);
+							$("#orderAddr").html(addsite);
+							$("#orderAddrx").html(addsites);
+							adressnew = $('#orderAddr').html()+$("#orderAddrx").html();
+						}else{
+							
+						}
+					}
+				}
+			}
+		})				
+		
+		sku_id = localStorage.getItem('qskuid');
+		// console.log(sku_id)
+		
+		//普通
+		// var uri = localStorage.getItem('qskuid');
+		// console.log(uri)
+		$.ajax({
+			url: domain_name_url + "/index",
+			type: "GET",
+			dataType: "jsonp", //指定服务器返回的数据类型
+			data: {
+				method: 'getGoodsBySkuId',
+				skuId: sku_id,
+				url_type: 'index'
+			},
+			success: function(data) {
+				if(data.success==1){
+					//选择商品的sku图片
+					var qimg = localStorage.getItem('qimg')
+					var listhtml = '';
+					listhtml += '<img src=' + qimg + '>';
+					$(".shop_info_img_a").html(listhtml)
+					//商品列表
+					sku_name = localStorage.getItem('qskuname');
+					var qattr = localStorage.getItem('qattr');
+					var qprice = localStorage.getItem('qprice');
+					var qnum = localStorage.getItem('qnum');
+					orderType = localStorage.getItem('qsource');
+					var goodsInfo = '<h4>' + sku_name + '</h4>';
+						goodsInfo += ' <div class="shop_brief">';
+						goodsInfo += '<span>' + qattr+ '</span>'
+						goodsInfo += '</div>'
+						goodsInfo += '<div class="order_line">';
+						goodsInfo += '<div class="shop_price">';
+						goodsInfo += '<div class="shop_pices" style="color: #e40012;">';
+						goodsInfo += '￥<i class="price">' + qprice + '</i>';
+						goodsInfo += '</div>';
+						goodsInfo += '</div>';
+						if(orderType == 'DG'){
+							goodsInfo += '<div class="cart_buy">';
+							goodsInfo += '<div class="cart_buy_jianjia">';
+							goodsInfo += '<div class="cart_buy_jian">-</div>';
+							goodsInfo += '<form>';
+							goodsInfo += '<input readonly="readonly" class="input cart_buy_input" value='+qnum+'>';
+							goodsInfo += '</form>';
+							goodsInfo += '<div class="cart_buy_jia">+</div>';
+							goodsInfo += '</div></div></div>';
+						}	
+					$(".shop_info_text").html(goodsInfo);
+					var pricehtml = '<span class="goods_money_spanfu">' + (qprice * qnum).toFixed(2) + '</span>';
+					pricehtml += '<span class="goods_money_span">合计（共 <font class="goods_money_num">' + qnum + '</font> 件商品）：</span>';
+					$('.goods_zhuangtaibtn_span').html(pricehtml);
+					// 点击数量增加
+					var repertory = localStorage.getItem("inventory");
+					$(document).on("click", ".cart_buy_jia", function() {
+						var orderNum = Number($(".cart_buy_input").val());
+						var addOrderNum = orderNum + 1;
+						$(".cart_buy_jian").css({
+							'color': '#b61c25'
+						});
+						if(orderNum >= repertory) {
+							$(this).css({
+								'color': '#cccbcb'
+							});
+							layer.open({
+								content: '库存不足',
+								skin: 'msg',
+								time: 2 //2秒后自动关闭
+							});
+							return
+						}
+						$(".cart_buy_input").val(addOrderNum);
+						if(addOrderNum >= 1) {
+							$(this).css({
+								// 'color': '#cccbcb'
+							});
+						}
+						if(orderType=='DG'){
+							var pricehtml = '<span class="goods_money_spanfu">' + (qprice* addOrderNum).toFixed(2) + '</span>';
+								pricehtml += '<span class="goods_money_span">合计（共 <font class="goods_money_num">' + addOrderNum + '</font> 件商品）：</span>';
+							$('.goods_zhuangtaibtn_span').html(pricehtml);
+						}
+						if(orderType=='LB'){
+							var pricehtml = '<span class="goods_money_spanfu">' + (qprice * 1).toFixed(2) + '</span>';
+								pricehtml += '<span class="goods_money_span">合计（共 <font class="goods_money_num">1</font> 件商品）：</span>';
+								$('.goods_zhuangtaibtn_span').html(pricehtml);
+						}
+					});
+					// 点击数量减少
+					$(document).on("click", ".cart_buy_jian", function() {
+						var orderNum = Number($(".cart_buy_input").val());
+						if(orderNum > 1) {
+							$(".cart_buy_input").val(orderNum - 1);
+							$(".cart_buy_jia").css({
+								'color': '#b61c25'
+							})
+						} else if(orderNum == 1) {
+							$(this).css({
+								'color': '#cccbcb'
+							});
+							return
+						}
+						if(orderType=='DG'){
+							var pricehtml = '<span class="goods_money_spanfu">' + (qprice * (orderNum - 1)).toFixed(2) + '</span>';
+								pricehtml += '<span class="goods_money_span">合计（共 <font class="goods_money_num">' + (orderNum - 1) + '</font> 件商品）：</span>';
+							$('.goods_zhuangtaibtn_span').html(pricehtml);
+						}
+						if(orderType=='LB'){
+							var pricehtml = '<span class="goods_money_spanfu">' + (qprice * 1).toFixed(2) + '</span>';
+								pricehtml += '<span class="goods_money_span">合计（共 <font class="goods_money_num">1</font> 件商品）：</span>';
+							$('.goods_zhuangtaibtn_span').html(pricehtml);
+						}
+						
+					});
+				}
+				
+			}
+		});
+		//留言
+		remark = $('#textArea').val();
+		var orderNums = $('.goods_money_num').html();
+		$(document).on("click", "#btn", function() {
+			$('#btn').css('cursor','pointer');	
+			$.ajax({
+				url: domain_name_url + "/order",
+				type: "GET",
+				contentType: "application/json",
+				dataType: "jsonp", //指定服务器返回的数据类型
+				data: {
+					method: 'createOrder',
+					skuId: sku_id,
+					token: token,
+					deliveryAddress:adressnew,//地址
+					consignee: name,//姓名
+					consigneeTel: phone,//手机号
+					transactionBody:sku_name,//商品名称
+					orderType:orderType,//商品来源
+					skuNumber:orderNums,//商品数量
+					remark:remark,//留言
+					deviceInfo:'WEB',
+					sceneInfo:'{"h5_info": {"type":"Wap","wap_url": "https://jiangshidi.top","wap_name": "掌大优选"}}',
+					dataSource: 'H5',
+					paymentWaykey:'WetCatH5',
+					spbillCreateIp:returnCitySN['cip'],
+					url_type: 'order'
+				},
+				success: function(data) {
+					$('.first_btn').attr("disabled","disabled"); 
+					if(orderType=='LB'){
+						memberLevel=1;
+					}
+					console.log(data);
+					var mwebUrl = data.result.rs[1].mwebUrl;
+					console.log(mwebUrl);
+					// window.location.href = mwebUrl;
+					
+				}
+		    })
+		})
+		$('.title_top_first').click(function(){
+			window.location.href = 'order_list.html?currentType=1';
+		})
+	</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提现记录</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/member_css/withdrawal_record.css" />
+	    <link rel="stylesheet" href="../css/swiper.min.css" />
+	    <script type="text/javascript" src="../js/jquery-1.10.2.min.js" ></script>
+	    <script type="text/javascript" src="../js/font-size.js" ></script>
+	    <script type="text/javascript" src="../js/swiper.min.js" ></script>
+	    <script type="text/javascript" src="../js/global_variable.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a onclick="history.go(-1);return false;" class="title_top_first">
+					<img src="../img/back1.png"  class="hea_img"/>
+				</a>
+				<span class="title_top_center">提现记录</span>
+			</div>
+		</header>
+		<div class="main">
+		<!-- 有数据 -->
+			<ul class="withdrawal_record_ul">
+				<li>
+					<div class="withdrawal_record_top">
+						<div class="withdrawal_record_cont">
+							<p class="title">微信提现</p>
+							<p class="time">2018-06-05 11:25:09</p>
+						</div>
+						<div class="withdrawal_record_price">
+							<p class="price_num">-<span>50.20</span></p>
+							<p class="price_status">审核中</p>
+						</div>
+					</div>
+					<div class="withdrawal_record_hint">
+						<p>温馨提示 : 您的提现正在审核，正常最迟3个工作日到账。请耐心等待</p>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		<!-- 无数据 -->
+		<div class="anonymous">
+			<p>暂时还没有入账记录哦！</p>
+			<button type="button" id='make'>去赚钱</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/member_js/withdrawal_record.js" ></script>
+</html>	

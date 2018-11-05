@@ -1,0 +1,259 @@
+.container{
+	width: 100%;
+	height: auto;
+	background-color: #f9f9f9;
+}
+.tishi{
+	width:100%;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	font-size: 0.28rem;
+	color: #999999;
+}
+/*main标题*/
+.main_order{
+	width: 100%;
+	height: auto;
+	margin-top: 1rem;
+}
+.main_order_tabtitle{
+	width: 100%;
+    height: 0.84rem;
+    border-top: 0.01rem solid #ebebeb;
+    border-bottom: 0.01rem solid #ebebeb;
+    background-color: #fff;
+    position: fixed;
+}
+.main_order_tab{
+	width: 20%;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	float: left;
+}
+.main_order_tab_a{
+	display: inline-block;
+	width: 80%;
+	height: 0.8rem;
+	float: left;
+	font-size: 0.3rem;
+	text-align: center;
+	color: #333;
+	margin-left: 10%;
+}
+.tabhover{
+	color: #b61c25;
+	border-bottom: 0.04rem solid #b61c25;
+}
+/*商品全部的订单*/
+.tabcontent{
+	display: inline-block;
+	width: 100%;
+	height: auto;
+	margin-top: .84rem;
+}
+.tabcontent_all{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-bottom: 0.2rem;
+}
+.tabcontent_all_title{
+	width: 100%;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	border-bottom: 0.01rem solid #ebebeb;
+}
+.tabcontent_all_title_num{
+	height: 0.9rem;
+	margin-left: 0.3rem;
+	font-size: 0.28rem;
+	color: #999999;
+	float: left;
+}
+.tabcontent_all_title_zhuangtai{
+	height: 0.9rem;
+	font-size: 0.28rem;
+	color: #999;
+	float: right;
+	margin-right: 0.3rem;
+}
+.tabcontent_all_title_zhuangtai font{
+	color: #b61c25;
+}
+.tabcontent_all_background{
+	width: 100%;
+	height: 1.96rem;
+	/*line-height: 1.96rem;*/
+	background-color: #f9f9f9;
+}
+.tabcontent_all_background a{
+}
+.tabcontent_all_background_span{
+	height: 1.96rem;
+	margin-left: 0.3rem;
+	float: left;
+}
+.tabcontent_all_background_span img{
+	width: 1.42rem;
+	height: 1.42rem;
+	margin-top: 0.28rem;
+}
+.tabcontent_all_background_cont{
+	width: 77%;
+	height: 100%;
+	padding-left: .15rem;
+}
+.tabcontent_all_background_cont .cont_title{
+	width: 100%;
+	text-overflow:ellipsis;/*表示文本超出用省略号代替*/
+
+	white-space:nowrap;/*表示文本不换行；*/
+
+	overflow:hidden;/*表示超出隐藏；*/
+	color: #333;
+	font-size: .3rem;
+	margin-top: .28rem;
+
+}
+.tabcontent_all_background_cont .cont_specification{
+	width: 100%;
+	text-overflow:ellipsis;/*表示文本超出用省略号代替*/
+
+	white-space:nowrap;/*表示文本不换行；*/
+
+	overflow:hidden;/*表示超出隐藏；*/
+	color: #999;
+	font-size: .26rem;
+	margin-top: .2rem;
+}
+/*状态按钮*/
+.tabcontent_all_btn{
+	width: 100%;
+	height: 0.9rem;
+	line-height: 0.9rem;
+}
+.tabcontent_all_btn button{
+	float: right;
+	margin-right: 0.3rem;
+	width: 1.4rem;
+	height: 0.54rem;
+	background: none;
+	border: none;
+	border-radius: 0.2rem;
+	margin-top: 0.18rem;	
+}
+.tabcontent_all_btn button.go_pay{
+	background:#fff;
+	border:.02rem solid rgb(89,87,87);
+
+}
+.tabcontent_all_btn button.cancle{
+	color: #fff;
+	background: #b61c25;
+}
+/*无订单提示*/
+.no_order{
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	margin-top: 1.8rem;
+}
+.no_order img{
+	width: 3.8rem;
+	height: 2rem;
+}
+.no_order p{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	color: #666666;
+}
+/*模态框*/
+.modal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 88%;
+    margin: 72% auto;
+    background-color:#fff;
+    -webkit-animation: zoom 0.6s;
+    animation: zoom 0.6s;
+    resize: both;
+    overflow: auto;
+}
+@-webkit-keyframes zoom{
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+.modal-body{
+	width: 80%;
+	height: .8rem;
+	border-radius:.04rem;
+	margin: .3rem auto;
+    box-sizing:border-box;
+    border-bottom: .01rem solid #ebebeb;
+}
+.modal-body input{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border:none;
+	outline: none;
+	font-size: .34rem;
+	text-align: center;
+	line-height: .8rem;
+	background:#eee;
+}
+.modal-footer{
+	border-top: .01rem solid #ebebeb;
+}
+.modal-footer button{
+    width: 49%;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+    font-size: .32rem;
+    background-color:transparent;
+}
+.modal-footer button.bot_cancel{
+	color: #666;
+	float: right;
+}
+.modal-footer button.bot_sure{
+	color: #b61c25;
+	float: left;
+	border-right: .01rem solid #ebebeb;
+}
+#modal_confirm .modal-body{
+	width: 100%;
+	height: .8rem;
+	line-height: .8rem;
+	margin: .3rem auto;
+    box-sizing:border-box;
+    text-align: center;
+    border:none;
+}
+.pullOrder,.noOrder{
+	width:100%;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	font-size: 0.28rem;
+	color: #999999;
+	display: none;
+}

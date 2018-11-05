@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提现</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/member_css/withdraw.css" />
+	    <link rel="stylesheet" href="../css/swiper.min.css" />
+	    <link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+	    <script type="text/javascript" src="../js/jquery-1.10.2.min.js" ></script>
+	    <script type="text/javascript" src="../js/font-size.js" ></script>
+	    <script type="text/javascript" src="../js/swiper.min.js" ></script>
+	    <script type="text/javascript" src="../js/global_variable.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a onclick="history.go(-1);return false;" class="title_top_first">
+					<img src="../img/back1.png"  class="hea_img"/>
+				</a>
+				<span class="title_top_center">提现</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="cont">
+				<div class="cont_top">
+					<div class="top_left">
+						<p class="top_left_title">提现到微信</p>
+						<p class="top_left_time">48小时到账</p>
+					</div>
+					<div class="top_right">
+						<p class="right_click"><span>点击进行微信授权</span><img src='../img/member/authorization.png'></p>
+						<p>微信授权以后才能提现哦</p>
+					</div>
+				</div>
+				<div class="cont_top cont_center">
+					<p class="center_num">提现金额<span>( 最小提现单位 : <i>元</i> )</span></p>
+					<p class="center_price">￥<input type="number" maxlength="10" value="" id="price" disabled=""></p>
+				</div>
+				<div class="cont_top cont_bottom">
+					<p class="cont_bottom_title">全部可提现金额<span id="money">0.00</span>元<button id='all'>全部提现</button></p>
+					<p class="cont_bottom_text">输入金额超过总可提现金额</p>
+					<button type="button" id="btn" disabled="">提现</button>
+				</div>
+			</div>
+		</div>
+		<!-- 微信授权弹框 -->
+		<div class="accredit" style="display: none;">
+			<div class="accredit_header">
+				<h4>微信授权</h4>
+			</div>
+			<div class="accredit_body">
+				<p class="accredit_img"><img src='../img/login/palm.png'></p>
+				<p class="accredit_apply">掌大优选申请获得以下权限</p>
+				<p class="accredit_list"><span class="accredit_list_cont"><span class="accredit_circle"></span>获得你的公开信息(昵称、头像等)</span></p>
+			</div>
+			<div class="accredit_footer">
+				<a class="accredit_allow">允许</a>
+				<a class="accredit_refuse">拒绝</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/member_js/withdraw.js" ></script>
+</html>

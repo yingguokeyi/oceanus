@@ -1,0 +1,179 @@
+.main{
+	width: 100%;
+	height: auto;
+	margin-top: 1rem;
+}
+.main_top{
+	width: 100%;
+	height: 3rem;
+	background: #b61c25;
+	text-align: center;
+	position: relative;
+}
+.main_top #grades_img{
+	width: 2.02rem;
+	height: 1.72rem;
+	position: absolute;
+	left: 2.7rem;
+	z-index: 9;
+}
+.top_img{
+	width: 100%;
+	height: 2.92rem;
+	position: absolute;
+	top: 1rem;
+}
+#member_bg{
+	width: 94%;
+	height: 100%;
+}
+.grades_line{
+	width: 63%;
+	height: .02rem;
+	background: #ebebeb;
+	position: absolute;
+	top: 1.6rem;
+	left: 1.7rem;
+}
+.top_title{
+	width: 94%;
+	position: absolute;
+	top: 1rem;
+	left: .1rem;
+}
+.top_title ul{
+	width: 100%;
+	overflow: hidden;
+}
+.top_title ul li{
+	width: 33.33%;
+	text-align: center;
+	float: left;
+}
+.top_title ul li p{
+	font-size: .26rem;
+	color: #333;
+}
+.main_tab{
+	width: 100%;
+	height: auto;
+	margin-top: 1.2rem;
+	background: #fff;
+	
+}
+.pt_tab{
+	width: 100%;
+}
+.tab_title{
+	width: 100%;
+	height: .9rem;
+	line-height: .9rem;
+	font-size: .3rem;
+	color: #333;
+	padding: 0 .26rem;
+	border-bottom:.01rem solid #ebebeb; 
+}
+.tab_list{
+	width: 100%;
+}
+.tab_list li{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding: .3rem .26rem;
+}
+.tab_list .tab_img{
+	width: 1.22rem;
+	height: 1.22rem;
+	float: left;
+}
+.tab_img img{
+	width: 100%;
+}
+.tab_init{
+	width: 80%;
+	float: right;
+}
+.tab_init p{
+	margin-top: .15rem;
+}
+.tab_init p:nth-child(1){
+	color: #333;
+	font-size: .32rem;
+	margin-top: .2rem;
+}
+.tab_init p:nth-child(2){
+	font-size: .24rem;
+	color: #666;
+}
+.tab_condition{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	padding: 0 .26rem;
+}
+.tab_condition span{
+	font-size: .24rem;
+	color: #666;
+}
+.tab_bg{
+	width: 100%;
+	height: .2rem;
+	background: #f8f8f8;
+}
+.tab_btn{
+	width: 1.28rem;
+	height: .46rem;
+	background: transparent;
+	color: #b61c25;
+	border:.01rem solid #b61c25;
+	border-radius: .06rem;
+	text-align: center;
+	line-height: .46rem;
+	float: right;
+	margin-top: .25rem;
+}
+/*联系客服*/
+.warm_title{
+	text-align: center;
+	border-bottom: .01rem solid #ebebeb;
+}
+.warm_title h4{
+	margin: 0;
+	font-size: .3rem;
+	color: #333;
+	margin-top:.34rem;
+}
+.warm_title p{
+	margin: 0;
+	font-size: .26rem;
+	color: #666;
+	margin-bottom: .34rem;
+}
+.warm_choose a{
+	display: inline-block;
+	width: 49%;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	font-size: .32rem;
+}
+.warm_cancel{
+	color: #666;
+	float: right;
+}
+.warm_login{
+	color: #b61c25;
+	float: left;
+	border-right: .01rem solid #ebebeb;
+}
+.service_choose{
+	width: 100%;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+}
+.service_choose a{
+	font-size: .32rem;
+	color: #b61c25;
+}

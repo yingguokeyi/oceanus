@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/personal/per_set.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/token.js"></script>
+		<script type="text/javascript" src="../js/token_success.js" ></script>
+	</head>
+	<body style="background-color: #F9F9F9;">
+		<header>
+			<div class="title_top">
+				<a href="../mine.html" class="title_top_first">
+					<img src="../img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">设置</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="main_bootom">
+				<ul>
+					<li class="first">
+					  <img src='../img/about.png' class="first_img">
+						<a href="javascript:;" class="first_a first_about" onclick="window.location='about_me.html'">
+							<span class="title_content">
+								关于我们
+							</span>
+							<span class="back_span">
+								<img src="../img/xiayiye.png"/>
+							</span>
+						</a>
+					</li>
+					<li class="first change_password">
+						<img src='../img/resetPass.png' class="first_img">
+						<a href="javascript:;" class="first_a first_pass" onclick="window.location='change_password.html'">
+							<span class="title_content">
+								修改密码
+							</span>
+							<span class="back_span">
+								<img src="../img/xiayiye.png" />
+							</span>
+						</a>
+					</li>
+				</ul>
+				<div class="main_btn">
+					<a href="javascript:;" class="main_btn_a">
+						<button class="mian_btn_login">退出账号</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="warm" style="display: none;">
+			<div class="warm_title">
+				<h4>友情提示</h4>
+				<p>确定要退出登录吗?</p>
+			</div>
+			<div class="warm_choose">
+				<a class="warm_login">确定</a>
+				<a class="warm_cancel">取消</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		var token = localStorage.getItem('token');
+		var da_login = localStorage.getItem("da_login");
+		if(token==null){
+			//如果未登录
+			$('.change_password').hide();
+			$('.main_btn').hide();
+		}else{
+			//登录状态
+			$('.change_password').show();
+			$('.main_btn').show();
+			$(".main_btn").click(function() {
+				layer.open({
+					type: 1,
+					content: $('.warm').html(),
+					anim: 'up',
+					scrollbar: false,
+					shadeClose: false,
+					style: 'position:fixed;bottom:50%;left: 8%; right:8%;height: auto;border:none;border-radius:6px'
+					
+				});
+				
+			})
+			//点击确定退出登录
+			$(document).on("click", ".warm_login", function(){
+				localStorage.removeItem('token');
+				localStorage.removeItem('da_login');
+				localStorage.removeItem('memberLevel');
+				localStorage.removeItem('parentUserHasMark');
+				window.location.href = '../index.html';
+				});
+				$(document).on("click", ".warm_cancel", function() {
+					layer.closeAll('page');
+
+			});
+		}
+	</script>
+</html>

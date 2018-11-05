@@ -1,0 +1,81 @@
+.main{
+	width: 100%;
+	height: auto;
+	margin-top: 1.01rem;
+	overflow: hidden;
+}
+/*有数据*/
+.withdrawal_record_ul{
+	width: 100%;
+	height: auto;
+	display: none;
+}
+.withdrawal_record_ul li{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	margin-bottom: .1rem;
+	padding: .2rem .3rem;
+	
+}
+.withdrawal_record_top{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-bottom: .2rem;
+	border-bottom: .01rem solid #eee;
+}
+.withdrawal_record_cont{
+	width: 50%;
+	float: left;
+}
+.withdrawal_record_cont .title{
+	font-size: .26rem;
+	color: #333;
+}
+.withdrawal_record_cont .time{
+	font-size: .22rem;
+	color: #666;
+	margin-top: .22rem;
+}
+.withdrawal_record_price{
+	width: 50%;
+	float: right;
+	text-align: right;
+	color: #e40012;
+	font-size: .26rem;
+}
+.withdrawal_record_price .price_status{
+	color: #333;
+	margin-top: .22rem;
+}
+.withdrawal_record_hint{
+	width: 100%;
+	color: #999;
+	font-size: .28rem;
+	margin-top: .2rem;
+}
+/*无数据*/
+.anonymous{
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+.anonymous p{
+	margin-top: 2rem;
+	color: #999;
+	font-size: .24rem;
+}
+.anonymous button{
+	width: 2.4rem;
+	height: .78rem;
+	background: #b61c25;
+	color: #fff;
+	text-align: center;
+	line-height: .78rem;
+	margin-top: .64rem;
+	border-radius: .06rem
+}
+
+
+

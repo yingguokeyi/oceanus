@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<title>首-页</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/footer.css" />
+		<script type="text/javascript" src="js/font-size.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/jsonselect.js"></script>
+		<script type="text/javascript" src="js/global_variable.js"></script>
+	</head>
+	<body style="overflow:auto;">
+		<div class="container">
+			<div class="top">
+				<header>
+					<!--搜索商品框开始-->
+					<div class="search">
+						<!--定位城市-->
+						<a href="switchCity.html" class="a_search">
+							<span class="icon_24gai city_icon">
+							</span>
+							<span class="city"></span>
+						</a>
+						<!--搜索商品结果-->
+						<a href="classify_search.html" class="a_search a_sousuo">
+							<span class="content">
+								<img src='img/1@2x.png'/>
+								<img src="img/search.png" />
+								<span>输入商品名称 搜索商品</span>
+							</span>
+						</a>
+						<img src="img/new.png" class="search_new">
+					</div>
+					<!--搜索商品框结束-->
+					<!-- Swiper 轮播开始-->
+					<div class="swiper-container" id="lunboIdOut">
+						<div class="swiper-wrapper" id="lunboIdIn">
+
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+						<!-- Add Arrows -->
+					</div>
+					<!-- Swiper 轮播结束-->
+				</header>
+			</div>
+			<!-- 限时秒抢 -->
+			<div class="combo_recom" id="show">
+				<!-- 秒抢时间 -->
+				<div class='ms' onclick="logout()"> 
+					<div class='bonus' >
+
+					</div>
+					<!-- 倒计时时间 -->
+					<div class='countdown'> 
+						<div class='chance' id="_h"></div>
+						<div class='partition'>
+							<div class='partition_a'></div>
+							<div class='partition_b'></div>
+						</div>
+						<vdiv class='point' id="_m"></div>
+						<div class='partition'>
+							<div class='partition_a'></div>
+						    <div class='partition_b'></div>
+						</div>
+						<view class='sec' id="_s"></div>
+					</div>
+				</div>
+				<!-- 秒杀商品 -->
+				<div class="goods_bottom">
+					<!-- Swiper -->
+					<div class="swiper-container " id="taocanIdOut">
+						<div class="swiper-wrapper taocanIdIn" >
+						</div>
+					</div>
+					<!--swiper-->
+				</div>
+			</div>
+			<!-- 商品 -->
+			<div class="allGoods" id='list'>
+				<div class="wrapper wrapper01" id="retr">
+					<div class="scroller" style="width: 200%; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(-83.125px, 0px) translateZ(0px);">
+						<ul class="clearfix">
+						</ul>
+					</div>
+				</div>
+				<div class="allGoods_list" id="orderContent">
+					<ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<footer class="footer_bottom">
+			<ul class="footer_ul">
+				<li>
+					<a href="javascript:;" class="style">
+						<span class="footer_span"> 
+							<img src="img/homebg.png" />
+						</span><br /> 首页
+					</a>
+				</li>
+				<li>
+					<a href="classify.html">
+						<span class="footer_span">
+							<img src="img/classify.png" />
+						</span><br /> 分类
+					</a>
+				</li>
+				<li>
+					<a href="member.html">
+						<span class="footer_span">
+							<img src="img/memberl.png" />
+						</span><br /> 会员
+					</a>
+				</li>
+					<li>
+					<a href="mine.html" >
+						<span class="footer_span">
+							<img src="img/mined.png" />
+						</span><br />我的
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<!-- 回到顶部 -->
+		<div class="go_top">
+			<img src="img/stick.png">
+		</div>
+	</body>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</html>

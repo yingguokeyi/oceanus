@@ -1,0 +1,368 @@
+.container{
+	width:100%;
+	height: auto;
+	background-color: #f9f9f9;
+	/* margin-bottom: 1rem; */
+}
+.top{
+	width: 100%;
+	height: auto;
+}
+header{
+	width: 100%;
+	height: 4.3rem;
+	position: relative;
+}
+/*搜索商品框*/
+.search{	
+	height: 0.6rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+    margin: 0.25rem 0.32rem 0 0.32rem;
+}
+/*定位city*/
+.icon_24gai{
+	width: 0.4rem;
+    height: 0.4rem;
+    background: url(../img/location.png) no-repeat;
+    background-size: 100% 100%;
+}
+.city_icon{
+	float: left;
+	margin: 0.05rem 0.05rem 0 0;
+}
+.city{
+	font-size: 0.26rem;
+	color: #fff;
+	float: left;
+	line-height: 0.6rem;
+}
+/*搜索商品结果*/
+.a_sousuo{
+    display: inline-block;
+	width: 4.85rem;
+	height: 0.6rem;
+	background:rgba(255,255,255,0.4);
+	border-radius: 0.25rem;
+    float: left; 
+    margin-left: 0.15rem;
+    line-height: 0.6rem;
+    font-size: 0.26rem;
+    color: #999;
+}
+.a_sousuo span{
+	float: left;
+}
+.content img{
+	vertical-align: middle;
+    width: 0.4rem;
+    margin: 0.1rem;
+    float: left;
+}
+.search_new{
+	width: 0.4rem;
+    margin: 0.1rem;
+	float: right;
+
+}
+/* Swiper 轮播图开始*/
+header .swiper-container{
+	width: 100%;
+	height: 4.3rem;
+}
+header .swiper-slide{
+	width: 100%;
+	height: 4.3rem;
+}
+header .swiper-slide img{
+	width: 100%;
+	height: 100%;
+}
+/* 限时秒抢 */
+
+.combo_recom {
+    background-color: #fff;
+}
+.combo_recom .ms {
+	height:0.85rem;
+	line-height:0.85rem;
+	display:flex;
+	justify-content:flex-start;
+}
+.combo_recom .ms .bonus {
+	line-height:0.85rem;
+	font-size:0.22rem;
+	color:#e40012;
+	display:flex;
+	flex-direction:row;
+}
+.combo_recom .ms .bonus .word {
+	height:0.24rem;
+	margin-left:0.24rem;
+	margin-top:0.28rem;
+}
+.bonus_s {
+	color:#e40012;
+	margin-left:0.16rem;
+}
+.countdown {
+	height:0.85rem;
+	line-height:0.85rem;
+	display:flex;
+	justify-content:space-around;
+	margin-left:0.2rem;
+}
+			
+.chance {
+	height:0.32rem;
+	width: 0.32rem;
+	line-height:0.32rem;
+	border-radius:0.04rem;
+	background:#333;
+	color:#fff;
+	font-size:0.2rem;
+	margin-top:0.22rem;
+	text-align:center;
+}
+.partition {
+	height:0.32rem;
+	display:flex;
+	flex-direction:column;
+	margin-top:0.25rem;
+	margin-left: 0.08rem;
+}
+.partition .partition_a {
+	height:0.04rem;
+	width: 0.04rem;
+	border-radius:50%;
+	background:#333;
+	margin-top:0.06rem;
+	margin-left:0.02rem;
+}
+.partition .partition_b {
+	height:0.04rem;
+	width: 0.04rem;
+	border-radius:50%;
+	background:#333;
+	margin-top:0.06rem;
+	margin-left:0.02rem;
+}	
+.point {
+	height:0.32rem;
+	width: 0.32rem;
+	line-height:0.32rem;
+	border-radius:0.04rem;
+	background:#333;
+	color:#fff;
+	font-size:0.2rem;
+	margin-top:0.22rem;
+	text-align:center;
+	margin-left: 0.07rem;
+}
+.sec {
+	height:0.32rem;
+	width: 0.32rem;
+	line-height:0.32rem;
+	border-radius:0.04rem;
+	background:#333;
+	color:#fff;
+	font-size:0.2rem;
+	margin-top:0.22rem;
+	text-align:center;
+	margin-left: 0.07rem;
+}	
+.goods_bottom {
+    width: 100%;
+	height: 2.32rem;
+	background-color: #fff;
+}
+.goods_bottom .swiper-slide {
+	width: 1.40rem;
+	height: 2.32rem;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+	-ms-flex-align: center;
+	height: 2.32rem;
+	margin-left: 0.24rem;
+    /* -webkit-align-items: center;
+    align-items: center; */
+}
+.swiper-slide_a {
+    width: 100%;
+    height: 100%;
+}
+.goods_bottom .swiper-slide_a img {
+    width: 1.40rem;
+    height: 1.40rem;
+}
+.swiper-slide_a .g_b_dd_strong {
+    display: inline-block;
+    width: 1.65rem;
+    font-size: 0.26rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333;
+    font-weight: normal;
+}
+.setMeal-text {
+	height:0.37rem;
+	font-weight:bold;
+	margin-top:0.01rem;
+	font-size:0.22rem;
+	color:#e40012;
+	margin-left: 0.3rem;
+}
+.setMeal-textt {
+	height:0.37rem;
+	font-weight:bold;
+	margin-top:0.01rem;
+	text-decoration:line-through;
+	font-size:0.16rem;
+	color:#999999;	
+	margin-left: 0.3rem;
+}
+
+/*商品*/
+.allGoods{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	margin-top: .2rem;
+	margin-bottom: 1rem;
+}
+.wrapper01 {
+	position:relative;
+	height: .78rem;
+	width: 100%;
+	overflow: hidden;
+	margin:0 auto;
+	padding:0 .24rem;
+}
+#list #retr.active{
+	position:fixed;
+	top:0;
+	left:0;
+	background:#fff;
+	z-index:1000
+}
+.wrapper01 .scroller {
+	position:absolute;
+}
+.wrapper01 .scroller li {
+	height: .73rem;
+	float: left;
+	font-size: .3rem;
+	text-align: center;
+	line-height: .73rem;
+}
+.wrapper01 .scroller li a{
+	color:#333;
+	margin-right: .56rem;
+}
+.wrapper01 .scroller li.cur a{
+	color: #b61c25;
+	border-bottom: 0.04rem solid #b61c25;
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear: both;
+	visibility:hidden;
+}
+.clearfix{
+	*zoom:1;
+}
+.allGoods_list{
+	width: 100%;
+	height: auto;
+	min-height: 15rem;
+}
+.allGoods_list ul{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.allGoods_list ul li{
+	width: 46.5%;
+	float: left;
+	margin-left: .2rem;
+}
+.allGoods_img{
+	width: 100%;
+	height: 3.5rem;
+
+}
+.allGoods_img img{
+	width: 100%;
+	height: 100%;
+	border-radius: .1rem;
+}
+.allGoods_title{
+	width: 100%;
+	font-size: .26rem;
+	color: #333;
+	height:.66rem;
+	text-overflow:ellipsis;/*表示文本超出用省略号代替*/
+
+	white-space:nowrap;/*表示文本不换行；*/
+
+	overflow:hidden;/*表示超出隐藏；*/
+	margin-top: .2rem;
+}
+.allGoods_price{
+	width: 100%;
+	font-size: .12rem;
+	overflow: hidden;
+}
+.allGoods_price_init{
+	color: #666;
+}
+
+.allGoods_price_num{
+	font-weight: bold;
+	color: #e40012;
+	margin-left: .2rem;
+}
+.allGoods_discount{
+	width: 100%;
+	/*height: .3rem;*/
+	margin: .22rem 0 .32rem 0;
+	overflow: hidden;
+}
+.allGoods_discount_reduce{
+	width: .9rem;
+	height: .29rem;
+	line-height: .35rem;
+	position: absolute;
+	font-size: .18rem;
+	color: #fff;
+	top: 0rem;
+	left: .01rem;
+	text-align: center;
+}
+/*回到顶部*/
+.go_top{
+	position: fixed;
+	right: .3rem;
+    bottom: 2rem;
+    display: none;
+}
+.go_top img{
+	width: .68rem;
+	height: .68rem;
+}
+
+

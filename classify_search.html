@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分类里的搜索页面</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/classify_commons.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/font-size.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/jsonselect.js"></script>
+		<script type="text/javascript" src="js/global_variable.js"></script>
+	</head>
+	<style>
+	.discountgoods_title{
+		width: 100%;
+		height: auto;
+		border-bottom: 0.01rem solid #ebebeb;
+   		display: none;
+	}
+	.discountgoods_title ul{
+		width: 100%;
+		height: 0.78rem;
+		background-color: #FFFFFF;
+	}
+	.discountgoods_title li{
+		width: 33.3%;
+		height: 0.78rem;
+		line-height: 0.78rem;
+		float: left;
+		background-color: #FFFFFF;
+		text-align: center;
+		font-size: 0.3rem;
+		color: #999999;
+		position: relative;
+	}
+	.top-arrow{
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: .1rem solid transparent;
+		border-right: .1rem solid transparent;
+		border-top: .12rem solid #c7cfcc;
+		top: .5rem;
+		right: .57rem;
+	}
+	.top-arrow-slected{
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: .1rem solid transparent;
+		border-right: .1rem solid transparent;
+		border-top: .12rem solid #f23030;
+		top: .5rem;
+		right: .57rem;
+	}
+	.bottom-arrow{
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: .1rem solid transparent;
+		border-right: .1rem solid transparent;
+		border-bottom: .12rem solid #c7cfcc;
+		top: .22rem;
+		right: .57rem;
+	}
+	.bottom-arrow-selected{
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: .1rem solid transparent;
+		border-right: .1rem solid transparent;
+		border-bottom: .12rem solid #f23030;
+		top: .22rem;
+		right: .57rem;
+	}
+	.discountgoods_title .choose{
+		color: #f23030;
+	}
+		/*商品排列列表*/
+	.discount_goods_list{
+		width: 100%;
+		height:auto;
+		overflow: hidden;
+	}
+	.discount_goods_list .goods_bottom_dl{
+		border: 0.01rem solid #ebebeb;
+		padding: .11rem .2rem;
+	}
+	.discount_goods_list .goods_bottom_dd{
+		width: 100%;
+		/*height:3.5rem;*/
+	}
+	.discount_goods_list .goods_bottom_dd a{
+		display: inline-block;
+		width: 100%;
+		/*height:3.5rem;*/
+	}
+	.discount_goods_list .g_b_dd_img{
+		width: 1.7rem;
+		height: 1.7rem;
+	}
+	.discount_goods_list .g_b_dd_img img{
+		width: 1.7rem;
+		height: 1.7rem;
+	    margin: 0.05rem 0.03rem;
+	}
+	.g_b_dd_text{
+		width: 69%;
+		vertical-align: top;
+		margin: 0 .3rem 0 .18rem;
+	}
+	.discount_goods_list .g_b_dd_strong{
+	    display: inline-block;
+	    width: 100%;
+	    height: 0.7rem;
+	    line-height: 0.8rem;
+	    font-size: 0.3rem;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    color: #595757;
+	    vertical-align: top;
+	}
+	.g_b_dd_spu{
+		width: 100%;
+	}
+	.discount_goods_list .g_b_dd_span{
+		width: 100%;
+	}
+	.discount_goods_list .g_b_dd_span span{
+		height: 0.5rem;
+	    line-height: 0.5rem;
+		font-size: 0.3rem;
+	    color: #e40012;
+	}
+	</style>
+	<body style="background:#fff">
+		<div class="container">
+			<header>
+				<div class="title_top">
+					<a href="index.html" class="title_top_first">
+						<img src="img/back.png" class="hea_img" />
+					</a>
+					<span class="title_top_center">搜索</span>
+				</div>
+				<!--搜索商品框开始-->
+				<div class="search">
+					<!--搜索商品结果-->
+					<a href="javascript:;" class="a_search a_sousuo">
+						<span class="content">
+							<img src="img/search.png" />
+							<input type="search" placeholder="精品优惠 实惠立返" class="search_goods" id="keyword"></input>
+						</span>
+					</a>
+				</div>
+				<!--搜索商品框结束-->
+			</header>
+			<div class="discountgoods_title">
+				<ul>
+					<li class="synthesize">综合</li>
+					<li class="sales">销量</li>
+					<li class="price">
+						价格
+						<span class="top-arrow"></span>
+						<span class="bottom-arrow"></span>
+					</li>
+				</ul>
+			</div>
+			<div class="main" id='main'>
+				<div class="main_zuijin">
+					<p class="main_zuijin_title">
+						<span class="main_zuijin_title_span">最近搜索</span>
+					</p>
+					<div class="main_zuiji_contents">
+					</div>
+				</div>
+				<div class="main_qingkong" style="display:none">
+					<p class="main_qingkong_title">
+						<button class="main_qingkong_title_btn">清空历史搜索</button>
+					</p>
+				</div>
+				<div class="discount_goods_list goods_listye">
+				
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script>
+		window.jsel = JSONSelect;
+		var searchName = [];//最近搜索保存到的数组
+		var searchNames = '';//搜索的值
+		$(function() {
+			$('.synthesize').addClass('choose');
+			var page;
+			page = 0;
+			var variable;
+			function getSe(page,parseMark){
+				var params = {
+					method: 'searchPddGoods',
+					goodsName: searchNames,
+					begin: page*5+1,
+					end: 5,
+					url_type: 'classify'
+				};
+				if (parseMark && parseMark == 0) {
+					params.priceMark = 0;
+				}
+				if (parseMark && parseMark == 1) {
+					params.priceMark = 1;
+				}
+				if (parseMark && parseMark == 2) {
+					params.saleMark = 2;
+				}
+				$.ajax({
+					url: domain_name_url + "/classify",
+					type: "GET",
+					dataType: "jsonp", //指定服务器返回的数据类型
+					data: params,
+					success: function(data) {
+						page = page+1;
+						var seagoods = data.result.rs;
+						var seagoodsPdd = seagoods[0].searchPddGoods.result.rs.slice(0,5);
+						var seagoodsPt = seagoods[1].searchGoods.result.rs.slice(0,5);
+						var seagoodsl=seagoodsPt.concat(seagoodsPdd);
+						var listhtml = '';
+						variable=seagoodsl.length;
+						if(seagoodsl.length!=0){
+							for(var i = 0; i < seagoodsl.length; i++) {
+								var pdd_id = seagoodsl[i].goods_id;
+								var spu_id = seagoodsl[i].id;
+								var source = seagoodsl[i].source_code;
+								var startTime = seagoodsl[i].coupon_start_time;
+						    	var endtime = seagoodsl[i].coupon_end_time;
+						    	var desc = seagoodsl[i].goods_desc;
+								listhtml += '<dl class="goods_bottom_dl" id="goods_bottom_dl" data-id='+spu_id+' data-pddid='+pdd_id+' data-source='+seagoodsl[i].source_code+' data-name='+seagoodsl[i].goods_name+' data-endtime='+endtime+' data-startime='+startTime+' data-img='+seagoodsl[i].goods_gallery_urls+' data-price='+seagoodsl[i].min_group_price+' data-dprice='+seagoodsl[i].coupon_discount+' data-jprice='+(seagoodsl[i].min_group_price-seagoodsl[i].coupon_discount)+' data-num='+seagoodsl[i].sold_quantity+'  data-desc='+desc+' >';
+								listhtml += '<dd class="goods_bottom_dd">';
+								listhtml += '<a>';
+								listhtml += '<span class="g_b_dd_img">';
+								if(source != 'PDD'){
+									listhtml += '<img src=' + seagoodsl[i].image + '  alt="" />';
+								}
+								if(source == 'PDD'){
+									listhtml += '<img src=' + seagoodsl[i].goods_image_url + ' alt=""  />';
+								}
+								listhtml += '</span>';
+								listhtml += '<span class="g_b_dd_text">'
+								if(source != 'PDD'){
+									listhtml += '<strong class="g_b_dd_strong">' + seagoodsl[i].spu_name + '</strong>';
+									listhtml += '<span class="g_b_dd_spu">'+seagoodsl[i].spu_attribute+'</span>';
+								}
+								if(source == 'PDD'){
+									listhtml += '<strong class="g_b_dd_strong">' + seagoodsl[i].goods_name + '</strong>';
+									listhtml += '<span class="g_b_dd_spu"></span>';
+								}
+								listhtml += '<span class="g_b_dd_span">';
+								if(source != 'PDD'){
+									listhtml += '<span>￥' +((seagoodsl[i].market_price)/100).toFixed(2) + '</span>';
+								}
+								if(source == 'PDD'){
+									listhtml += '<span><i style="color:#666;">卷后</i>￥' +((seagoodsl[i].min_group_price-seagoodsl[i].coupon_discount)/100).toFixed(2) + '</span>';
+									listhtml += '<span style="float:right;width:1.86rem;height:.3rem; position:relative;">';
+									listhtml += '<img src="img/discount.png" style="width:100%;height:100%;">';
+									listhtml +='<span style="font-size:.18rem;width: 1rem;height: .32rem;line-height: .4rem;position: absolute;font-size: .18rem;color: #e40012;top: 0rem;left: .1rem;">立减<i>'+seagoodsl[i].coupon_discount/100+'</i>元</span>';
+									listhtml += '</span>';
+								}
+								
+								listhtml +='</span></span>';
+								listhtml += '</a></dd></dl>';
+							}
+							if(5*page>=5){
+						   		$(".goods_listye").append(listhtml);
+						    }else{
+						   		$(".goods_listye").html(listhtml);
+						    }
+							
+						}
+					}
+					
+				});
+					
+			}
+			//点击进入商品详情页
+			$(document).on('click','#goods_bottom_dl',function(){
+				var id = $(this).data('id'); //商品id
+				var pddid = $(this).data('pddid'); //商品id
+				var img = JSON.stringify($(this).data('img')); //商品图片
+				var name = $(this).data('name'); //商品名称
+				var desc = $(this).data('desc'); //商品介绍
+				var num = $(this).data('num'); //商品已售数量
+				var price = $(this).data('price'); //商品价格
+				var dprice = $(this).data('dprice'); //商品优惠券价格
+				var jprice = $(this).data('jprice'); //商品优惠后价格
+				var source = $(this).data('source'); //商品来源
+				var startTime = $(this).data('startime'); //优惠开始时间
+				var endTime = $(this).data('endtime'); //优惠结束时间
+				sStorage = window.localStorage; //本地存题目
+				sStorage.uri_goods = id;
+				sStorage.Pid = pddid;
+				sStorage.Pimg = img;
+				sStorage.Pname = name;
+				sStorage.Pdesc = desc;
+				sStorage.Pnum = num;
+				sStorage.Pprice = price;
+				sStorage.Psource = source;
+				sStorage.Pdprice = dprice;
+				sStorage.Pjprice = jprice;
+				sStorage.PstartTime = startTime;
+				sStorage.PendTime = endTime;
+				if(source == 'PDD'){
+					location.href = 'pdd/product_details.html?spuId=' + pddid;
+				}
+				if(source != 'PDD'){
+					location.href = 'goods_details.html?spuId=' + id;
+				}
+				
+			})
+			$("#keyword").on('keypress', function(e) {
+				var keycode = e.keyCode;
+				searchNames = $(this).val();
+				searchName = JSON.parse(localStorage.getItem('searchName')) || [];
+				if (searchName.indexOf(searchNames) === -1 && searchNames) {
+					searchName.push(searchNames);
+				}
+				// console.log(searchName)
+				localStorage.setItem('searchName',JSON.stringify(searchName));
+				// console.log(localStorage.getItem('searchName'));
+				if(keycode == '13') {
+					e.preventDefault();
+					//请求搜索接口  
+					$(".main_zuijin").css("display","none");
+					$('.main_qingkong').css("display","none");
+					$(".discountgoods_title").css("display","block");
+				}
+				getSe(page);
+				// 实现下拉刷新
+				window.onscroll = function(){
+					if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+						console.log(variable)
+						if(variable>0){
+							setTimeout(function () {
+								page++;
+								getSe(page);
+							},0)
+						}
+						
+					}
+				}
+				
+			});
+			
+			//获取滚动条当前的位置
+			function getScrollTop() {
+			    var scrollTop = 0;
+			    if(document.documentElement && document.documentElement.scrollTop) {
+			        scrollTop = document.documentElement.scrollTop;
+			    } else if(document.body) {
+			        scrollTop = document.body.scrollTop;
+			    }
+			    return scrollTop;
+			}
+			// 获取当前可视范围的高度
+			function getClientHeight() {
+			    var clientHeight = 0;
+			    if(document.body.clientHeight && document.documentElement.clientHeight) {
+			        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+			    } else {
+			        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+			    }
+			    return clientHeight;
+			}
+			// tips：Math.min是两个值取最小的值，Math.max则相反。
+			// 获取文档完整的高度
+			function getScrollHeight() {
+			    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+			}
+			
+			// 点击切换
+			$(document).on("click", ".discountgoods_title ul li", function() {
+				$(this).addClass('choose').siblings('li').removeClass('choose');
+			})
+			//点击综合
+			$(document).on('click','.synthesize',function(){
+				$('.bottom-arrow').removeClass('bottom-arrow-selected');
+				$('.top-arrow').removeClass('top-arrow-slected');
+				$('.goods_listye').html('');
+				getSe(page);
+				// 实现下拉刷新
+				window.onscroll = function(){
+					if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+						console.log(variable)
+						if(variable>0){
+							setTimeout(function () {
+								page++;
+								getSe(page);
+							},0)
+						}
+						
+					}
+				}
+			})
+			//点击销量
+			$(document).on('click','.sales',function(){
+				$('.bottom-arrow').removeClass('bottom-arrow-selected');
+				$('.top-arrow').removeClass('top-arrow-slected');
+				$('.synthesize').removeClass('top-arrow-slected');
+				$('.goods_listye').html('');
+				getSe(page,2);
+				// 实现下拉刷新
+				window.onscroll = function(){
+					if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+						console.log(variable)
+						if(variable>0){
+							setTimeout(function () {
+								page++;
+								getSe(page,2);
+							},0)
+						}
+						
+					}
+				}
+			})
+			//点击价格
+			$(document).on('click','.price',function(){
+				console.dir($('.bottom-arrow'))
+				if($('.bottom-arrow').hasClass('bottom-arrow-selected')){
+					//降序
+					$('.bottom-arrow').removeClass('bottom-arrow-selected');
+					$('.top-arrow').addClass('top-arrow-slected');
+					$('.goods_listye').html('');
+					getSe(page,'1');
+					// 实现下拉刷新
+					window.onscroll = function(){
+						if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+							console.log(variable)
+							if(variable>0){
+								setTimeout(function () {
+									page++;
+									getSe(page,'1');
+								},0)
+							}
+							
+						}
+					}
+				}else{
+					//升序
+					$('.top-arrow').removeClass('top-arrow-slected');
+					$('.bottom-arrow').addClass('bottom-arrow-selected');
+					$('.goods_listye').html('');
+					getSe(page,'0');
+					// 实现下拉刷新
+					window.onscroll = function(){
+						if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+							console.log(variable)
+							if(variable>0){
+								setTimeout(function () {
+									page++;
+									getSe(page,'0');
+								},0)
+							}
+							
+						}
+					}
+				}
+			})
+			//最近搜索
+			var conts = $('.main_zuiji_contents').get(0);
+			var str=JSON.parse(localStorage.getItem('searchName'));
+			var s='';
+			if(str==undefined){  
+			    $(".main_zuijin").hide();  
+			}else{
+				for(var i=0;i<str.length;i++){  
+		            var s = document.createElement('button');
+			    	s.className='main_zuiji_contents_btn'; 
+			    	s.innerText += str[i];
+			    	conts.appendChild(s);
+		        } 
+			    //点击最近搜索里边的内容进行搜索
+		        var btn = document.getElementsByClassName("main_zuiji_contents_btn");
+		        for(var j=0;j<btn.length;j++){
+		        	// console.log(btn[j].innerText)
+	        		btn[j].onclick=function(){
+	        			$(".main_zuijin").css("display","none");
+						$(".discountgoods_title").css("display","block");
+						$('.main_qingkong').hide();
+		        		// alert(this.innerText);
+		        		var btnText = this.innerText;
+		        		document.getElementById("keyword").value = btnText;
+						searchNames = btnText
+						getSe(page);
+						// 实现下拉刷新
+						window.onscroll = function(){
+							if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+								console.log(variable)
+								if(variable>0){
+									setTimeout(function () {
+										page++;
+										getSe(page);
+									},0)
+								}
+								
+							}
+						}
+			    	}
+				}
+				//清空搜索历史  	
+				$('.main_qingkong').show();
+				$(document).on('click','.main_qingkong_title_btn',function(){
+				  	localStorage.removeItem('searchName');  
+				    $('.main_zuijin').hide();
+				    $('.main_qingkong').hide();
+			    })
+		    } 
+			 
+		})
+	</script>
+</html>

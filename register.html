@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/register.css" />
+		<link rel="stylesheet" href="layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="js/font-size.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="js/register.js"></script>
+		<script type="text/javascript" src="js/global_variable.js" ></script>
+	</head>
+	<body style="background:#fff;">
+		<div class="container">
+			<header>
+				<div class="title_top">
+					<a href="login.html" class="title_top_first">
+						<img src="img/back.png" class="hea_img" />
+					</a>
+					<span class="title_top_center">注册</span>
+				</div>
+			</header>
+			<div class="main">
+				<div class="main_bak_login">
+					<div class="photo_img">
+					<img src='img/login/dribs.png' class="photo_img_bg">
+						<p class="photo_img_p">
+							<img src="img/login/palm.png" />
+						</p>
+					</div>
+					<div class="main_infor">
+						<ul class="main_infor_name">
+							<li class="name_li name_input">
+								<input type="text" placeholder="手机号" id="uname" />
+							</li>
+							<li class="name_li name_input">
+								<input type="text" placeholder="图片验证码" class="yzm" id="img_codema" />
+								<img class="img_yanzhengma" id="img_yanzhengma_id" /> 
+							</li>
+						</ul>
+					</div>
+					<p class="fuwutiaokuan">
+						继续注册表示已阅读并同意
+						<a href="Agreement.html" style="color:#b61c25;">《服务条款》</a>
+					</p>
+					<!--输入手机号验证码结束-->
+					<div class="main_btn">
+						<button type="button" class="main_btn_a mian_btn_login" disabled="">
+							下一步
+						</button>
+					</div>
+				</div>
+				<!--登录结束-->
+				<p class="loginin_num">
+					<a href="login.html">
+						已有账号？请登录
+					</a>
+				</p>
+
+			</div>
+		</div>
+		<!-- 弹框 -->
+		<div class="warm" style="display: none;">
+			<div class="warm_title">
+				<p>该手机号已注册,请直接登录</p>
+			</div>
+			<div class="warm_choose">
+				<a class="warm_login">登录</a>
+				<a class="warm_cancel">取消</a>
+				
+			</div>
+		</div>
+	</body>	
+	<script>
+		$(function() {
+			example();
+			var imagecode = localStorage.getItem('imagecode');
+			$("#img_yanzhengma_id").attr("src", domain_name_url+"/user?method=getImgCode&key=" + imageCodeKey);
+			// console.log(imagecode)
+			/*图片验证码*/
+			$(".img_yanzhengma").click(function() {
+				example();
+				$("#img_yanzhengma_id").attr("src", domain_name_url + "/user?method=getImgCode&key=" + imageCodeKey);
+			});
+			//	手机号码格式验证
+			$("#uname").blur(function() {
+				var reg = /^1[3|4|5|7|9|6|8][0-9]\d{4,8}$/;
+				var uname = $('#uname').val().replace(/\s+/g, "");
+				var name = document.getElementById("uname").value;
+				if(name==''){
+					layer.open({
+						content: '请输入手机号',
+						skin: 'msg',
+						time: 2
+					});
+				}else if(!reg.test(uname)) {
+					layer.open({
+						content: '手机号格式不正确',
+						skin: 'msg',
+						time: 2
+					});
+				} else {
+					$('.mian_btn_login').removeAttr('disabled');
+					$('.mian_btn_login').css({'background':'#b61c25','color':'#fff'});
+				}
+				
+			});
+			
+			//点击下一步
+			$(document).on("click", ".mian_btn_login", function() {
+				var name = document.getElementById("uname").value;
+				localStorage.setItem('name',document.getElementById("uname").value);
+				var timg = $("#img_codema").val(); 
+				if(name==''){
+					layer.open({
+						content: '请输入手机号',
+						skin: 'msg',
+						time: 2
+					});
+					return false;
+				}
+				if(timg==''){
+					layer.open({
+						content: '请输入图片验证码',
+						skin: 'msg',
+						time: 2
+					});
+					return false;
+				}
+				$.ajax({
+					url: domain_name_url + "/user",
+					type: "GET",
+					dataType: "jsonp", //指定服务器返回的数据类型
+					data: {
+						method: 'getCheckCodeAndPhone',
+						phone: name,
+						key: imagecode,
+						imgCode: timg,
+						source: '1',
+						url_type:'user'
+					},
+					success: function(data) {
+						if(data.success==1){
+							window.location.href='after_register.html';
+						}else if(data.success==3){
+							layer.open({
+								type: 1,
+								content: $('.warm').html(),
+								anim: 'up',
+								scrollbar: false,
+								shadeClose: false,
+								style: 'position:fixed;bottom:50%;left: 8%; right:8%;height: auto;border:none;border-radius:6px'
+								
+							});
+							$(document).on("click", ".warm_login", function(){
+								window.location.href = 'login.html';
+							});
+							$(document).on("click", ".warm_cancel", function() {
+								layer.closeAll('page');
+
+							});
+						}else if(data.success==4){
+							layer.open({
+								content: data.errorMessage,
+								skin: 'msg',
+								time: 2
+							});
+							$('.mian_btn_login').attr("disabled",true);
+							$('.mian_btn_login').css({'background':'#ebebeb','color':'#b3b3b3'});
+						}
+					}
+				})	
+			});
+
+		})
+	</script>
+</html>

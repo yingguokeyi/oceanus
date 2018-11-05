@@ -1,0 +1,165 @@
+.main{
+	width: 100%;
+	height: auto;
+	margin-top: 1.01rem;
+	overflow: hidden;
+}
+.cont{
+	width: 92%;
+	height: auto;
+	background: #fff;
+	margin: .4rem auto 0;
+}
+.cont_top{
+	width: 100%;
+	height: auto;
+	padding: .3rem .5rem;
+	border-bottom: .01rem solid #eee;
+	overflow: hidden;
+}
+.top_left{
+	width: 40%;
+	float: left;
+}
+.top_left_title{
+	font-size: .26rem;
+	color: #333;
+}
+.top_left_time{
+	font-size: .22rem;
+	color: #b61c25;
+	margin-top: .22rem;
+}
+.top_right{
+	width: 60%;
+	float: right;
+}
+.top_right p:nth-child(1){
+	font-size: .26rem;
+	color: #333;
+	text-align: right;
+}
+.top_right p:nth-child(1) span{
+	margin-right: .22rem;
+}
+.top_right p img{
+	width: .12rem;
+	height: .22rem;
+}
+.top_right p:nth-child(2){
+	font-size: .22rem;
+	color: #999;
+	text-align: right;
+	margin-top: .22rem;
+}
+.center_num{
+	font-size: .26rem;
+	color: #333;
+}
+.center_num span{
+	color: #999;
+	font-size: .2rem;
+	margin-left: .2rem;
+}
+.center_num span i{
+	font-style: normal;
+	color: #b61c25;
+}
+.center_price{
+	font-size: .3rem;
+	margin-top: .44rem;
+}
+.center_price input{
+	border:none;
+	outline: none;
+	font-size: .36rem;
+	background: transparent;
+	color: #333;
+}
+.cont_bottom p{
+	font-size: .24rem;
+	color: #999;
+}
+.cont_bottom p button{
+	background: transparent;
+	color: #576b95;
+	margin-left: .2rem;
+}
+.cont_bottom_text{
+	display: none;
+	color: #b61c25;
+}
+#btn{
+	width: 100%;
+	height: .96rem;
+	background: #ebebeb;
+	color: #b3b3b3;
+	line-height: .96rem;
+	text-align: center;
+	font-size: .36rem;
+	border-radius: .06rem;
+	margin-top: .3rem;
+}
+/*微信授权弹框*/
+.accredit_header{
+	width: 100%;
+	height: .98rem;
+	line-height: .98rem;
+	text-align: center;
+	color: #000;
+	font-size: .36rem;
+	border-bottom: .01rem solid #ebebeb;
+}
+.accredit_header h4{
+	margin: 0;
+}
+.accredit_img{
+	text-align: center;
+}
+.accredit_img img{
+	width: .7rem;
+	height: .7rem;
+	border-radius: 50%;
+	margin-top: .1rem;
+}
+.accredit_apply{
+	text-align: center;
+	margin:0;
+	color: #000;
+	font-size: .32rem;
+}
+.accredit_list{
+	padding: .32rem .6rem;
+	color: #999;
+	font-size: .28rem;
+}
+.accredit_list_cont{
+	padding: .1rem;
+	border-top: .01rem solid #ebebeb;
+}
+.accredit_circle{
+	width: .1rem;
+	height: .1rem;
+	background: #999;
+	border-radius: 50%;
+	margin-right: .22rem;
+}
+.accredit_footer{
+	border-top: .01rem solid #ebebeb;
+	height: .9rem;
+	line-height: .9rem;
+	overflow: hidden;
+}
+.accredit_allow{
+	width: 49%;
+	text-align: center;
+	float: left;
+	color: #b61c25;
+	border-right: .01rem solid #ebebeb;
+}
+.accredit_refuse{
+	width: 49%;
+	text-align: center;
+	float: right;
+	color: #000;
+}

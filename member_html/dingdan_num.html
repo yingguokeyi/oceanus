@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单量</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/personal/mobileSelect.css" />
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/date_address/mobileSelect.js"></script>
+		<script type="text/javascript" src="../js/date_address/selectDate.js"></script>
+	</head>
+	<style>
+		.main {
+			width: 100%;
+			height: auto;
+			margin-top: 1.01rem;
+		}
+		
+		.main_top {
+			width: 100%;
+			height: 2.02rem;
+			background-color: #FFFFFF;
+		}
+		
+		.main_top_date {
+			width: 100%;
+			height: 0.8rem;
+			border-bottom: 0.01rem solid #EBEBEB;
+		}
+		
+		.main_top_date li {
+			float: left;
+			height: 0.8rem;
+			text-align: center;
+			border-right: 0.01rem solid #EBEBEB;
+		}
+		
+		.main_top_date_first {
+			width: 15%;
+			line-height: 0.8rem;
+			color: #666666;
+		}
+		
+		.main_top_date_first span {
+			font-size: 0.3rem;
+		}
+		
+		.main_top_date_second {
+			width: 35%;
+		}
+		
+		.main_top_date_second span {
+			width: 2rem;
+			height: 0.5rem;
+			line-height: 0.5rem;
+			border: 0.01rem solid #333;
+			color: #333333;
+			border-radius: 0.1rem;
+			margin-top: 0.15rem;
+			font-size: 0.24rem;
+		}
+		
+		.main_top_date li.main_top_date_third {
+			width: 50%;
+			border-right: none;
+		}
+		
+		.main_top_date_third .choose_date {
+			width: 1.2rem;
+			height: 0.5rem;
+			line-height: 0.5rem;
+			border: 0.01rem solid #333;
+			color: #333333;
+			border-radius: 0.1rem;
+			margin-top: 0.15rem;
+			font-size: 0.24rem;
+			float: left;
+		}
+		
+		.main_top_date_third .choose_date_first {
+			margin-left: 0.4rem;
+		}
+		
+		.main_top_date_third .choose_xian {
+			float: left;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			margin: 0 0.1rem;
+		}
+		/*搜索框*/
+		
+		.choose_date_input {
+			width: 100%;
+			border: none;
+			background: none;
+			font-size: 0.24rem;
+			color: #333333;
+			text-align: center
+		}
+		/*搜索商品框*/
+		
+		.search {
+			width: 100%;
+			height: 0.7rem;
+		}
+		
+		.search_goods {
+			height: 0.5rem;
+			border: none;
+			background: none;
+			outline: none;
+		}
+		/*搜索商品结果*/
+		
+		.a_sousuo {
+			display: inline-block;
+			width: 5.5rem;
+			height: 0.7rem;
+			background-color: #f5f5f5;
+			border-radius: 0.06rem;
+			float: left;
+			margin: 0.26rem 0.3rem;
+			line-height: 0.7rem;
+			font-size: 0.26rem;
+			color: #999;
+		}
+		
+		.a_sousuo span {
+			float: left;
+		}
+		
+		.content img {
+			vertical-align: middle;
+			width: 0.4rem;
+			margin: 0.15rem;
+			float: left;
+		}
+		
+		.search .btn {
+			width: 1.1rem;
+			height: 0.65rem;
+			background: none;
+			border: none;
+			border-radius: 0.05rem;
+			margin-top: 0.29rem;
+			font-size: 0.26rem;
+			background-color: #cca96a;
+			color: #FFFFFF;
+			float: left;
+		}
+		/*main中间商品*/
+		
+		.main_center {
+			width: 100%;
+			height: auto;
+			margin-top: 0.2rem;
+		}
+		
+		.main_center_goods {
+			width: 100%;
+			height: 3.22rem;
+			background-color: #FFFFFF;
+			margin-bottom: 0.2rem;
+		}
+		
+		.main_center_goods .date_p {
+			height: 0.8rem;
+			line-height: 0.8rem;
+			font-size: 0.28rem;
+			color: #666;
+			border-bottom: 0.01rem solid #EBEBEB;
+			padding-left: 0.3rem;
+		}
+		/*商品信息点击量列表*/
+		
+		.main_content_ul {
+			width: 100%;
+			height: 2.4rem;
+		}
+		
+		.main_content_li {
+			width: 100%;
+			height: 2.4rem;
+		}
+		
+		.main_content_a {
+			display: inline-block;
+			width: 100%;
+			height: 2.4rem;
+		}
+		
+		.main_content_a_left {
+			width: 2.4rem;
+			height: 2.4rem;
+			float: left;
+		}
+		
+		.main_content_a_left img {
+			width: 1.8rem;
+			height: 1.8rem;
+			margin: 0.3rem;
+			border: 0.02rem solid #EBEBEB;
+		}
+		
+		.main_content_a_right {
+			width: 45%;
+			height: 2.4rem;
+			float: left;
+		}
+		
+		.m_c_a_r_top {
+			display: block;
+			height: 0.75rem;
+			font-size: 0.28rem;
+			color: #333;
+			margin-top: 0.3rem;
+		}
+		
+		.m_c_a_r_top img {
+			vertical-align: middle;
+		}
+		
+		.m_c_a_r_center {
+			display: block;
+			width: 100%;
+			height: 0.6rem;
+			line-height: 0.6rem;
+			font-size: 0.24rem;
+			color: #999;
+		}
+		
+		.main_content_a_zuiright {
+			width: 23%;
+			float: left;
+			height: 2.4rem;
+			color: #333333;
+			font-size: 0.28rem;
+			border-left: 0.01rem solid #EBEBEB;
+		}
+		
+		.click_num,
+		.shu_num {
+			width: 100%;
+			height: 1.2rem;
+			text-align: center;
+		}
+		
+		.click_num {
+			line-height: 1.6rem;
+		}
+		
+		.shu_num {
+			line-height: 0.8rem;
+		}
+	</style>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="../member.html" class="title_top_first">
+					<img src="../img/back.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">订单量</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="main_top">
+				<ul class="main_top_date">
+					<li class="main_top_date_first">
+						<span>全部</span>
+					</li>
+					<li class="main_top_date_second">
+						<span id="select_2">订单支付日期</span>
+					</li>
+					<li class="main_top_date_third">
+						<span class="choose_date choose_date_first">
+							<input type="number" placeholder="开始日期" class="choose_date_input" />
+						</span>
+						<span class="choose_xian">—</span>
+						<span class="choose_date">
+							<input type="number" placeholder="结束日期" class="choose_date_input" />
+						</span>
+					</li>
+				</ul>
+				<!--搜索商品框开始-->
+				<div class="search">
+					<!--搜索商品结果-->
+					<a href="javascript:;" class="a_search a_sousuo">
+						<span class="content">
+							<img src="../img/search.png" />
+							<input type="text" placeholder="输入商品名称 搜索商品" class="search_goods"></input>
+						</span>
+					</a>
+					<button class="btn">查询</button>
+				</div>
+				<!--搜索商品框结束-->
+			</div>
+			<div class="main_center">
+				<div class="main_center_goods">
+					<p class="date_p">日期：2018-3-6</p>
+					<ul class="main_content_ul">
+						<li class="main_content_li">
+							<a href="javascript:;" class="main_content_a">
+								<span class="main_content_a_left">
+									<img src="img/goods_list.jpg"/>
+								</span>
+								<span class="main_content_a_right">
+									<strong class="m_c_a_r_top">
+										<img src="img/jisuling.png" />
+										【年货节】沐光医用退热贴儿童4片装物理降温
+									</strong>
+									<span class="m_c_a_r_center">
+										分页油脂 马油洗护二合一
+									</span>
+
+								</span>
+								<span class="main_content_a_zuiright">
+									<span class="click_num">点击次数</span>
+								<span class="shu_num">1000</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_center_goods">
+					<p class="date_p">日期：2018-3-6</p>
+					<ul class="main_content_ul">
+						<li class="main_content_li">
+							<a href="javascript:;" class="main_content_a">
+								<span class="main_content_a_left">
+									<img src="img/goods_list.jpg"/>
+								</span>
+								<span class="main_content_a_right">
+									<strong class="m_c_a_r_top">
+										<img src="img/jisuling.png" />
+										【年货节】沐光医用退热贴儿童4片装物理降温
+									</strong>
+									<span class="m_c_a_r_center">
+										分页油脂 马油洗护二合一
+									</span>
+
+								</span>
+								<span class="main_content_a_zuiright">
+									<span class="click_num">点击次数</span>
+								<span class="shu_num">1000</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_center_goods">
+					<p class="date_p">日期：2018-3-6</p>
+					<ul class="main_content_ul">
+						<li class="main_content_li">
+							<a href="javascript:;" class="main_content_a">
+								<span class="main_content_a_left">
+									<img src="img/goods_list.jpg"/>
+								</span>
+								<span class="main_content_a_right">
+									<strong class="m_c_a_r_top">
+										<img src="img/jisuling.png" />
+										【年货节】沐光医用退热贴儿童4片装物理降温
+									</strong>
+									<span class="m_c_a_r_center">
+										分页油脂 马油洗护二合一
+									</span>
+
+								</span>
+								<span class="main_content_a_zuiright">
+									<span class="click_num">点击次数</span>
+								<span class="shu_num">1000</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_center_goods">
+					<p class="date_p">日期：2018-3-6</p>
+					<ul class="main_content_ul">
+						<li class="main_content_li">
+							<a href="javascript:;" class="main_content_a">
+								<span class="main_content_a_left">
+									<img src="img/goods_list.jpg"/>
+								</span>
+								<span class="main_content_a_right">
+									<strong class="m_c_a_r_top">
+										<img src="img/jisuling.png" />
+										【年货节】沐光医用退热贴儿童4片装物理降温
+									</strong>
+									<span class="m_c_a_r_center">
+										分页油脂 马油洗护二合一
+									</span>
+
+								</span>
+								<span class="main_content_a_zuiright">
+									<span class="click_num">点击次数</span>
+								<span class="shu_num">1000</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</body>	
+	<script>
+		$.selectDate("#select_2", {}, function(data) {
+			
+			console.log(data);
+			sStorage = window.localStorage; //本地存题目
+			sStorage.job = select_2;
+		});
+		$(function() {
+
+		})
+	</script>
+</html>

@@ -1,0 +1,28 @@
+.main{
+	width: 100%;
+	margin-top: 1rem;
+}
+.logistics_title{
+	width: 100%;
+	color:#b61c25;
+	font-size:.32rem;
+	padding:.3rem;
+	font-weight:bold;
+	text-align:right;
+}
+.logistics_cont{
+	width: 100%;
+}
+.logistics_cont li{
+	width: 100%;
+	padding: .2rem;
+	color: #999;
+	border-bottom:.01rem solid #ccc;
+}
+.logistics_time{
+	font-size: .3rem;
+}
+.logistics_adress{
+	font-size: .22rem;
+	line-height: .4rem;
+}

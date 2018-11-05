@@ -1,0 +1,113 @@
+header{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #333333;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	font-size: 0.28rem;
+	border-bottom: 0.01rem solid #f4f4f4;
+	background-color: #FFFFFF;
+}
+/*详情头部*/
+.title_top{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #333;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+.title_top span{
+	width: 32%;
+    height: 1rem;
+    float: left;
+    font-size: 0.34rem;
+}
+.title_top a.title_top_first{
+	width: 32%;
+	height: 0.85rem;
+	float: left;
+	text-align: left;
+	margin-left: 3%;
+}
+.title_top .hea_img{
+	width: 0.5rem;
+	height: 0.5rem;
+	vertical-align: middle;
+}
+/*内容*/
+.main{
+	width: 100%;
+	margin-top: 1.01rem;
+}
+.invite_fill{
+	width: 100%;
+	padding: 3%;
+	background: #fff;
+}
+.invite_fill label{
+	color: #666;
+}
+.invite_fill input{
+	display: inline-block;
+	width: 3rem;
+	height: .62rem;
+	background: #f3f3f3;
+	vertical-align: middle;
+	margin-left: .1rem;
+	border:none;
+	outline: none;
+	padding-left: .11rem;
+}
+/*修改提示文字的颜色*/
+
+input::-webkit-input-placeholder { /* WebKit browsers */ 
+
+color: #b3b3b3; 
+
+} 
+
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+
+color: #b3b3b3; 
+
+} 
+
+input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+
+color: #b3b3b3; 
+
+} 
+
+input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+
+color: #b3b3b3; 
+
+} 
+.invite_annotation{
+	width: 100%;
+	font-size:.24rem;
+	color:#999;
+	padding: .2rem 0;
+}
+.invite_annotation p{
+	margin-left: .16rem;
+}
+.invite_btn{
+	width: 100%;
+	text-align: center;
+}
+.invite_btn button{
+	width: 1.5rem;
+	height: .7rem;
+	background: #b61c25;
+	color: #fff;
+	text-align: center;
+	line-height: .7rem;
+	border-radius: .06rem;
+	font-size: .28rem;
+}

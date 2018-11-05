@@ -1,0 +1,95 @@
+/* 头部 */
+
+.message_div{
+	width: 100%;
+	text-align: center;
+}
+.message_div img{
+	width: 1.22rem;
+	height: 1.22rem;
+	margin-top: 1.8rem;
+}
+.message_div p{
+	font-size: .24rem;
+	color: #727171;
+	margin-top: .3rem;
+}
+
+/* 内容 */
+.discounts{
+    width: 100%;
+    height: 100%;
+    margin-top:1rem;
+}
+.discounts ul{
+    width: 100%;
+}
+
+.discounts ul .timeBucket{
+    width: 2.66rem;
+    height: 0.7rem;
+    margin-left: 2.7rem;
+    text-align: center;
+    color: #666666;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+/* 图片 */
+.map{
+    width: 100%;
+    background: #ffffff;;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.flower{
+    width: 6.98rem;
+    height: 3.16rem;
+    margin-left: 0.26rem;
+}
+.flower img{
+    width: 6.98rem;
+    height: 3.16rem;
+}
+
+.offside{
+    width:100%;
+    height: 100%;
+    background: #ffffff;
+}
+.headline{
+    width: 6.98rem;
+    margin-left: 0.26rem;
+    font-size: 0.28rem;
+    color: #333333;
+    margin-top: 0.28rem;
+}
+.introduction{
+    width: 6.98rem;
+    font-size: .24rem;
+    color: #666666;
+    margin-left: 0.24rem;
+    background: #ffffff;
+    margin-top: 0.18rem;
+    margin-bottom: 0.28rem;
+    line-height: 0.39rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+   
+}
+
+
+/* 无数据 */
+.however{
+    width: 1.6rem;
+    height: 0.5rem;
+    font-size: 0.3rem;
+    color: #999999;
+    text-align: center;
+    margin-left: 3.2rem;
+    margin-top: 6rem;
+    display: none;
+}

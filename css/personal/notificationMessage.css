@@ -1,0 +1,113 @@
+/* 头部 */
+
+.message_div{
+	width: 100%;
+	text-align: center;
+}
+.message_div img{
+	width: 1.22rem;
+	height: 1.22rem;
+	margin-top: 1.8rem;
+}
+.message_div p{
+	font-size: .24rem;
+	color: #727171;
+	margin-top: .3rem;
+}
+/* 内容 */
+/* 最外层的div */
+.sphere{
+    width: 100%;
+    height: 100%;
+    margin-top:1rem;
+}
+.sphere .meuyt{
+    width: 100%;
+}
+/* 日期 */
+.sphere .meuyt .timeBucket{
+    width: 2.66rem;
+    height: 0.7rem;
+    margin-left: 2.7rem;
+    text-align: center;
+    color: #666666;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+
+.hierarchy{
+    width: 100%;
+    height: 100%;
+    background: #ffffff;;
+    overflow: hidden;
+}
+.above{
+    width: 100%;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+.flower{
+    width:0.76rem;
+    height:0.76rem;
+    float: left;
+    margin-left: 0.24rem;
+    margin-top: 0.24rem;
+    background: #ffffff;
+}
+.flower img{
+    width: 0.76rem;
+    height: 0.76rem;
+    border-radius: 50%;
+
+}
+
+
+/* 信息头部标题 */
+
+.headline{
+    display: block;
+    width: 5.72rem;
+    height: 0.44rem;
+    color: #333333;
+    font-size: 0.3rem;
+    margin-top: 0.3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    background: #ffffff;
+    float: left;
+    margin-left: 0.18rem;
+  
+}
+.offside{
+    width:100%;
+    background: #ffffff;
+}
+.introduction{
+    width: 7.0rem;
+    font-size: .26rem;
+    color: #666666;
+    margin-left: 0.24rem;
+    background: #ffffff;
+    margin-top: 0.4rem;
+    margin-bottom: 0.24rem;
+    line-height: 0.39rem;
+   
+}
+
+
+/* 无数据 */
+.however{
+    width: 1.6rem;
+    height: 0.5rem;
+    font-size: 0.3rem;
+    color: #999999;
+    text-align: center;
+    margin-left: 3.2rem;
+    margin-top: 6rem;
+    display: none;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>消息</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/personal/message.css" />
+		<link rel="stylesheet" href="../css/personal/yaoqing.css" />
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js" ></script>
+	</head>
+	<body style="background:#f5f5f5">
+		<header>
+			<div class="title_top">
+				<a href="../mine.html" class="title_top_first">
+					<img src="../img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">
+					消息
+				</span>
+			</div>
+		</header>
+		<!-- 内容 -->
+		<div class="remind_list">
+			<ul>
+				<li class="first">
+					<a href="javascript:void(0);" class="first_a" onclick="service()">
+						<!-- 左边的图 -->
+						<div class="title_content">
+							<img src="../img/img_member/news.png"/>
+						</div>
+						<!-- 内容 -->
+						<div class="character">
+							<span class="provider">
+								消息通知
+							</span>
+							<span class="internet_content" id="box">
+							
+							</span>
+								<!-- 右边的图 -->
+						    <div class="back_span">
+								<img src="../img/xiayiye.png">
+							</div>
+						</div>
+					
+					</a>
+				</li>
+				<li class="first">
+					<a href="javascript:void(0);" class="first_a" onclick="activity()">
+						<!-- 左边的图 -->
+						<div class="title_content">
+							<img src="../img/img_member/discount.png"/>
+						</div>
+						<!-- 内容 -->
+						<div class="character">
+							<span class="provider">
+								优惠活动
+							</span>
+							<span class="internet_content" id="boxx">
+								
+							</span>
+							<!-- 右边的图 -->
+							<div class="back_span">
+								<img src="../img/xiayiye.png">
+							</div>
+						</div>
+						
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="message_div" style="display:none;">
+			<img src='../img/noNew.png'>
+			<p>暂无信息</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/personal/message.js"></script>
+</html>

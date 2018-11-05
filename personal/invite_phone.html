@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>邀请</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/personal/invite_phone.css" />
+	<link rel="stylesheet" href="../css/swiper.min.css" />
+	<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+	<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../js/font-size.js"></script>
+	<script type="text/javascript" src="../js/swiper.min.js"></script>
+	<script type="text/javascript" src="../js/global_variable.js"></script>
+	<script type="text/javascript" src="../js/token.js"></script>
+	<script type="text/javascript" src="../js/token_success.js"></script>
+	<script type="text/javascript" src="../js/invite_phone.js"></script>
+</head>
+<body style="background-color: #F9F9F9;">
+	<header>
+		<div class="title_top">
+			<a href="yaoqing.html" class="title_top_first">
+				<img src="../img/back.png" class="hea_img" />
+			</a>
+			<span class="title_top_center">邀请</span>
+		</div>
+	</header>
+	<div class="main">
+		<div class="invite_fill">
+			<label>填写邀请人:</label>
+			<input type="text" placeholder='请输入邀请人电话' value='' id='phone' disabled onkeyup="value=value.replace(/[^\0-9\*]/g,'')" onpaste="value=value.replace(/[^\0-9\*]/g,'')" oncontextmenu = "value=value.replace(/[^\0-9\*]/g,'')">
+		</div>
+		<div class="invite_annotation">
+			<p>注：邀请人绑定后将不再解绑</p>
+		</div>
+		<div class="invite_btn">
+			<button type="button" id="btn_save" disabled>保存</button>
+		</div>
+	</div>
+</body>
+</html>

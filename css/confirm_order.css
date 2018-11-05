@@ -1,0 +1,691 @@
+header{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #333333;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	font-size: 0.28rem;
+	border-bottom: 0.01rem solid #f4f4f4;
+	background-color: #FFFFFF;
+}
+/*详情头部*/
+.title_top{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #fff;
+	text-align: center;
+	background-color: #b61c25;
+}
+.title_top span{
+	width: 32%;
+    height: 1rem;
+    float: left;
+    font-size: 0.34rem;
+}
+.title_top a.title_top_first{
+	width: 32%;
+	height: 0.85rem;
+	float: left;
+	text-align: left;
+	margin-left: 3%;
+}
+.title_top .hea_img{
+	width: 0.5rem;
+	height: 0.5rem;
+	vertical-align: middle;
+}
+.main{
+	width: 100%;
+	height: auto;
+	margin-top: 1rem;
+	
+}
+/*待收货标题*/
+.daishouhuo{
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.3rem;
+	background-color: #FFFFFF;
+	color: #333;
+	padding-left: 0.3rem;
+	border-bottom: 0.01rem solid #ebebeb;
+}
+/*收货地址*/
+.address{
+	width: 100%;
+   /* height: 1.6rem;*/
+    background-color: #fff;
+    position: relative;
+}
+.address ul{
+	width: 80%;
+	float: left;
+}
+.address ul.address_logo{
+	width: 10%;
+}
+.address_logo_li{
+	width: 100%;
+	height: 1.6rem;
+}
+.address_logo_li img{
+	width: 0.4rem;
+	height: 0.5rem;
+	margin: 0.6rem 0.2rem 0.2rem 0.2rem;
+}
+.address_loction li{
+	width: 100%;
+}
+.address_loction_li{
+	height: 0.65rem;
+	line-height: 0.7rem;
+	color: #333;
+	font-size: 0.3rem;
+}
+.address_loction_li_left{
+	float: left;
+	height: 0.6rem;
+	width: auto;
+}
+.address_loction_li_right{
+	float: right;
+	height: 0.6rem;
+	width: auto;
+	margin-right: 0.3rem;
+}
+.address_loction_lisec{
+	line-height: 0.4rem;
+	color: #666;
+	font-size: 0.3rem;
+}
+.address ul.address_xiayiye{
+	width: 10%;
+}
+.address_xiayiye_li{
+	width: 100%;
+	height: 1.6rem;
+}
+.address_a_guanli{
+	display: inline-block;
+   height: 100%;
+}
+.address_xiayiye_li img{
+	width: 0.26rem;
+    height: 0.36rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.add_address{
+	width: 100%;
+	height: 1.2rem;
+    background: #fff;
+    padding-left: .24rem;
+}
+.add_address img{
+	width: .38rem;
+	height: .38rem;
+	vertical-align: middle;
+}
+.add_address_text{
+	display: inline-block;
+	line-height: 1.2rem;
+	margin-left: .16rem;
+}
+/*信条*/
+.xintiao{
+	width: 100%;
+    height: 0.1rem;
+    background: url(../img/xintiao.png) no-repeat;
+    background-size: 100% 100%;
+}
+.sec_main{
+	width: 100%;
+    height: auto;
+    margin-top: 0.2rem;
+    overflow: hidden;
+}
+.sec_main ul.sec_main_ul{
+	width: 100%;
+    height: auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+ul.sec_main_ul li{
+	width: 100%;
+    height: 1rem;
+    border-bottom: 0.01rem solid #ebebeb;
+}
+ul.sec_main_ul li.last{
+	border: none;
+}
+.choose_a{
+	display: inline-block;
+	width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    color: #333;
+    font-size: 0.28rem;
+}
+.yinlian{
+	width: 0.56rem;
+	height: 0.56rem;
+	vertical-align: middle;
+	margin: 0 0.18rem 0 0.3rem;
+}
+.tacitly{
+	width: .24rem;
+	height: .24rem;
+	float: right;
+	margin-right: .24rem;
+	margin-top: .36rem;
+}
+.sec_main_ul a.current_fu{
+    background: url(../img/gouxuan_moren.png)no-repeat;
+    background-position-x: 95%;
+    background-position-y: 55%;
+    background-size: 6.5% 50%;
+}
+/*商品列表的商品*/
+/*商品列表*/
+.goods_list{
+	width: 100%;
+	height: auto;
+	margin-top: 0.2rem;
+	background-color: #fff;
+}
+.goods_list_title{
+	padding-left: 0.3rem;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.3rem;
+	color: #333;
+}
+.shop_info{
+	background-color:#FFFFFF;
+	/*height:2.36rem;*/
+	position:relative;
+	border-top: 0.01rem solid #ebebeb;
+	overflow: hidden;
+}
+.shop_info .shop_info_img{
+	width: 30%;
+	float: left;
+	height:2.35rem;
+}
+.shop_info_img_a{
+	display: inline-block;
+	height: 2.35rem;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.shop_info .shop_info_img img{
+	width:1.86rem;
+	height:1.86rem;
+	margin: 0.22rem 0.2rem;
+}
+.shop_info .shop_info_text{
+	width: 70%;
+	float: left;
+	position: relative;
+}
+.shop_info .shop_info_text h4{
+	font-size:0.26rem;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+	overflow:hidden;
+	margin: 0.1rem 0.2rem 0 0;
+	color: #595757;
+	font-weight: normal;
+}
+.shop_info .shop_info_text .shop_brief{
+	height:0.4rem;
+	line-height:0.4rem;
+	font-size:0.24rem;
+	color:#81838e;
+	white-space:nowrap;
+}
+.shop_info .shop_info_text .shop_brief span{
+	display:inline-block;
+	margin-right:0.1rem;
+}
+.shop_info .shop_info_text .order_line{
+	width: 100%;
+	overflow: hidden;
+}
+.shop_info .shop_info_text .order_line .shop_price{
+	float: left;
+}
+.shop_info .shop_info_text .shop_pices {
+	line-height: 0.6rem;
+	line-height: 0.6rem;
+	color:#A5772C;
+	font-size:0.28rem;
+}
+.shop_info .shop_info_text .shop_pices span{
+	margin-left:0.2rem ;
+}
+.shop_info .shop_info_text .shop_arithmetic {
+	position: absolute;
+    right: 0.25rem;
+    bottom: 0.1rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    height: 0.5rem;
+}
+.shop_info .shop_info_text .shop_arithmetic a {
+	display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    background-color: #f5f5f5;
+    float: left;
+}
+.shop_info .shop_info_text .shop_arithmetic .minus img{
+	width: 0.25rem;
+	height: 0.25rem;
+}
+.shop_info .shop_info_text .shop_arithmetic .failed {
+	color:#d1d1d1;
+}
+.shop_info .shop_info_text .shop_arithmetic .plus img{
+	width: 0.25rem;
+	height: 0.25rem;
+}
+.shop_info .shop_info_text .shop_arithmetic .num {
+	width: 0.6rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    border: none;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 0.26rem;
+    float: left;
+}
+.shopPrice {
+	background: #fff;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: right;
+    margin-right: 0.25rem;
+    font-size: 0.3rem;
+    color: #333;
+}
+.shopPrice span {
+	color:#A5772C;
+}
+/*购物车*/
+.cart_buy {
+	float: right;
+	height: 1.01rem;
+	background-color: #FFFFFF;
+}
+
+.cart_buy_jianjia {
+	float: right;
+	width: 2.3rem;
+	border:.02rem solid #cccbcb;
+    border-radius:.08rem;
+    margin-top: .2rem;
+    margin-right: .24rem;
+}
+
+.cart_buy_jian {
+	width: 0.6rem;
+	height: 0.6rem;
+	float: left;
+	/*margin-top: 0.25rem;*/
+	line-height: 0.6rem;
+	text-align: center;
+  
+    border-right:.01rem solid #cccbcb;
+
+}
+.cart_buy_input {
+	height: 0.6rem;
+	width: 1rem;
+	border: none;
+	background: none;
+	background-color: #FFFFFF;
+	line-height: 0.3rem;
+	text-align: center;
+	float: left;
+	color: #333333;
+	font-size: 0.28rem;
+}
+
+.cart_buy_jia {
+	width: 0.6rem;
+	height: 0.6rem;
+	float: right;
+	line-height: 0.6rem;
+	text-align: center;
+	border-left:.01rem solid #cccbcb;
+    color: #b61c25;
+}
+/*配送方式*/
+.distribution{
+	width: 100%;
+   	height: 1rem;
+   	background-color: #fff;
+   	margin-top: 0.2rem;
+}
+.distribution_ul{
+    width: 100%;
+	height: 1rem;
+}
+.distribution_ul li{
+    height: 1rem;
+	line-height: 1rem;
+	
+}
+.distribution_ul_left{
+	float: left;
+	margin-left: 0.3rem;
+	color: #333;
+	font-size: 0.24rem;
+}
+.distribution_ul_right{
+	float: right;
+	margin-right: .3rem;
+	color: #333;
+	font-size: .22rem;
+}
+.distribution_ul_right .distribution_cost{
+	margin-right: .08rem;
+}
+.distribution_price {
+	color: #e40012;
+	font-size: .28rem;
+}
+/*领取优惠券*/
+.youhuiquan{
+   	width: 100%;
+   	height: 1rem;
+   	background-color: #fff;
+   	margin-top: 0.2rem;
+}
+.youhuiquan_ul{
+	width: 100%;
+	height: 1rem;
+}
+.youhuiquan_ul li{
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.3rem;
+}
+.youhuiquan_ul_left{
+	float: left;
+	margin-left: 0.3rem;
+}
+.youhuiquan_ul_left span{
+	height: 1rem;
+	line-height: 1rem;
+	float: left;
+	color: #666;
+	font-size: 0.29rem;
+}
+.youhuiquan_ul_left span.youhuiquan_ul_left_span{
+	margin-left: 0.1rem;
+}
+.youhuiquan_ul_left img{
+    width: 1rem;
+    height: 0.35rem;
+    margin-top: 0.32rem;
+}
+.youhuiquan_ul_right{
+	float: right;
+	text-align: right;
+	margin-right: 0.3rem;
+}
+.youhuiquan_ul_right a{
+	color: #333;
+}
+.youhuiquan_go img{
+	vertical-align: middle;
+    margin-left: 0.2rem;
+    height: 0.3rem;
+}
+/*买家留言*/
+.news_buyer{
+	width: 100%;
+   	height: 1rem;
+   	background-color: #fff;
+   	margin-top: 0.2rem;
+}
+.main_infor_name{
+	width: 100%;
+	height: 1rem;
+	background-color: #FFFFFF;
+}
+.name_li{
+	width: 20%;
+	height: 1rem;
+	line-height: 1rem;
+	float: left;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #333;
+}
+.name_input{
+	width: 80%;
+}
+.name_input textarea{
+	width: 100%;
+	height: 100%;
+	color: #b3b3b3;
+	background: none;
+	border: none;
+	font-size: 0.3rem;
+	outline: none;
+}
+ #textArea::-webkit-input-placeholder{
+      height: 1rem;line-height: 1rem;
+      font-size: 0.24rem;
+    }    /* 使用webkit内核的浏览器 */
+#textArea:-moz-placeholder{
+      height: 1rem;line-height: 1rem;
+      font-size: 0.24rem;
+    }                  /* Firefox版本4-18 */
+#textArea::-moz-placeholder{
+      height: 1rem;line-height: 1rem;
+      font-size: 0.24rem;
+    }                  /* Firefox版本19+ */
+#textArea:-ms-input-placeholder{
+      height: 1rem;line-height: 1rem;
+       font-size: 0.24rem;
+    }
+
+/*订单金额*/
+.goods_money{
+	width: 100%;
+	height: 1.95rem;
+	margin-top: 0.2rem;
+	background-color: #fff;
+}
+.goods_money_ul{
+	width: 100%;
+	height: 1.95rem;
+}
+.goods_money_ul li{
+	width: 100%;
+	height: 0.65rem;
+	line-height: 0.65rem;
+	font-size: 0.28rem;
+}
+.goods_money_num{
+	color: #e9545b;
+}
+.goods_money_span{
+	float: right;
+	color: #333;
+}
+.goods_money_spanfu{
+	float: right;
+	color: #e9545b;
+	margin-right: 0.3rem;
+}
+/*状态按钮*/
+.goods_zhuangtaibtn{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1rem;
+	background-color: #FFFFFF;
+	/*margin-top: 0.2rem;*/
+}
+.goods_zhuangtaibtn_span{
+	height: 1rem;
+	line-height: 1rem;
+	float: left;
+	margin-left: 0.3rem;
+	font-size: 0.32rem;
+}
+.goods_zhuangtaibtn button{
+	width: 1.4rem;
+	height: 0.6rem;
+	background: none;
+	border: none;
+	border-radius: 0.05rem;
+	margin:0.2rem 0.3rem 0 0;
+	font-size: 0.26rem;
+}
+.goods_zhuangtaibtn button.first_btn{
+	background-color: #b61c25;
+	color: #FFFFFF;
+	float: right;
+}
+/*添加地址弹框*/
+ .pop_title{
+	height: .9rem;
+	width: 100%;
+	line-height: .9rem;
+    text-align: center;
+}
+.pop_add{
+	display: inline-block;
+
+	font-size: .3rem;
+	color: #333;
+	margin-left: .3rem;
+}
+.pop_cancle{
+	float: right;
+    margin-right: .3rem;
+}
+.pop_ul li{
+	border-top:1px solid #ebebeb;
+	padding: 0 .3rem;
+	
+}
+.pop_ul li label{
+	display: inline-block;
+	width: 25%;
+	font-size: .3rem;
+	color: #333;
+}
+.pop_ul li input{
+	width: 70%;
+	border:none;
+	line-height: .9rem;
+	font-size: .28rem;
+	color: #b3b3b3;
+	padding:0;
+	height: .9rem;
+	margin: 0;
+}
+.pop_ul li:last-child{
+	height: 1.28rem;
+}
+.pop_ul li:last-child label{
+	margin-top: -.1rem;
+}
+.pop_ul li textarea{
+	width: 70%;
+	outline: none;
+	padding-top: .1rem;
+}
+.choose_address{
+	width: 70%;
+	display: inline-block;
+	line-height: .9rem;
+	color: #b3b3b3;
+}
+.pop_ul .choose_address img{
+	display: inline-block;
+	width: .16rem;
+	height: .3rem;
+	float: right;
+	margin-top: .28rem;
+}
+.pop_save{
+	width: 100%;
+	height: .96rem;
+	background: #b61c25;
+	color: #fff;
+	text-align: center;
+	line-height: .96rem;
+	font-size: .36rem;
+}
+/*模态框*/
+.modal{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99;
+	background-color: rgba(0,0,0,0.5);
+}
+.modal-content{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	width: 86%;
+	margin: 36% auto;
+	background-color:#fff;
+	-webkit-animation: zoom 0.6s;
+	animation: zoom 0.6s;
+	resize: both;
+	overflow: auto;
+}
+@-webkit-keyframes zoom{
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
+@keyframes zoom{
+	from {transform: scale(0)}
+	to {transform: scale(1)}
+}
+.modal-body{
+	box-sizing:border-box;
+	border-bottom: .01rem solid #ebebeb;
+}
+.mui-picker,.mui-poppicker{
+	background: #fff;
+}
+.mui-backdrop{
+	background: transparent;
+}
+.mui-poppicker button{
+	border: none;
+	background: transparent;
+	color: #333;
+}
+.mui-poppicker-header .mui-btn{
+	font-size: 18px;
+}

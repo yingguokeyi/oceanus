@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/personal/my_grades.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/global_variable.js"></script>
+		<title>我的等级</title>
+	</head>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="../mine.html" class="title_top_first">
+					<img src="../img/back1.png"  class="hea_img"/>
+				</a>
+				<span class="title_top_center">我的等级</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="main_top">
+				<img id="grades_img" />
+				<div class="top_img">
+					<img src="../img/img_personal/member_bg.png" id='member_bg' />
+					<div class="grades_line"></div>
+					<div class="top_title">
+						<ul>
+							<li id="pt_member">
+								<img src='../img/img_personal/ptunactive.png'>
+								<p>普通会员</p>
+							</li>
+							<li id="small_member">
+								<img src='../img/img_personal/smallunactive.png'>
+								<p>小掌柜</p>
+							</li>
+							<li id="big_member">
+								<img src='../img/img_personal/bigunactive.png'>
+								<p>大掌柜</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			<div class="main_tab">
+				<div class="pt_tab" id="pt_tab">
+					<p class="tab_title">会员权益</p>
+					<ul class="tab_list">
+						<li>
+							<div class="tab_img">
+								<img src="../img/img_personal/discount.png">
+							</div>
+							<div class="tab_init">
+								<p>海量优惠券</p>
+								<p>购物即可领取内部优惠卷，享受极低的卷后价</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="pt_tab" id="small_tab" style="display:none;">
+					<p class="tab_title">晋升机制</p>
+					<p class="tab_condition">
+						<span>自购完成一单(订单过了退换期),并且发展5个粉丝</span>
+						<button class="tab_btn" id='btn_apply'>立即申请</button>
+					</p>
+					<p class="tab_bg"></p>
+					<p class="tab_title">会员权益</p>
+					<ul class="tab_list">
+						<li>
+							<div class="tab_img">
+								<img src="../img/img_personal/discount.png">
+							</div>
+							<div class="tab_init">
+								<p>海量优惠券</p>
+								<p>购物即可领取内部优惠卷，享受极低的卷后价</p>
+							</div>
+						</li>
+						<p class="tab_bg"></p>
+						<li>
+							<div class="tab_img">
+								<img src="../img/img_personal/self.png">
+							</div>
+							<div class="tab_init">
+								<p>自购返佣</p>
+								<p>自购商品完成订单后，即可获得50%返佣!</p>
+							</div>
+						</li>
+						<p class="tab_bg"></p>
+						<li>
+							<div class="tab_img">
+								<img src="../img/img_personal/fans_rebate.png">
+							</div>
+							<div class="tab_init">
+								<p>粉丝购物返佣</p>
+								<p>若自己的粉丝是普通会员，他购买并完成订单后，即可获得20%返佣！
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="pt_tab" id="big_tab" style="display:none;">
+					<p class="tab_title">晋升机制</p>
+					<p class="tab_condition">
+						<span>发展100个粉丝，其中包含五个小掌柜</span>
+						<button class="tab_btn" id="btn_contact">联系客服</button>
+					</p>
+					<p class="tab_bg"></p>
+					<p class="tab_title">会员权益</p>
+					<ul class="tab_list">
+						<li>
+							<div class="tab_img">
+								<img src="../img/img_personal/discount.png">
+							</div>
+							<div class="tab_init">
+								<p>海量优惠券</p>
+								<p>购物即可领取内部优惠卷，享受极低的卷后价</p>
+							</div>
+						</li>
+						<p class="tab_bg"></p>
+						<li>
+							<div class="tab_img">
+								<img src="../img/img_personal/self.png">
+							</div>
+							<div class="tab_init">
+								<p>自购返佣</p>
+								<p>自购商品完成订单后，即可获得50%返佣!</p>
+							</div>
+						</li>
+						<p class="tab_bg"></p>
+						<li>
+							<div class="tab_img" style="margin-top:.3rem;">
+								<img src="../img/img_personal/double.png">
+							</div>
+							<div class="tab_init">
+								<p>粉丝购物返佣</p>
+								<p>
+								1、若自己的粉丝是普通会员，他购买并完成订单后，即可获得20%
+								返佣！<br/>
+								2、若自己的粉丝是普通会员，他购买并完成订单后，即可获得20%
+								返佣！
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 联系客服 -->
+		<div class="service warm" style="display: none;">
+			<div class="warm_title">
+				<h4>提示</h4>
+				<p>400-0000-0000</p>
+			</div>
+			<div class="service_choose">
+				<a class="service_cancel">确定</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/personal/my_grades.js"></script>
+</html>	

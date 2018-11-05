@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本信息</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/personal/per_details.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<link rel="stylesheet" href="../css/personal/mobileSelect.css" />
+		<link rel="stylesheet" href="../layer_mobile/need/layer.css" />
+		<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/date_address/mobileSelect.js"></script>
+		<script type="text/javascript" src="../js/date_address/selectDate.js"></script>
+		<script type="text/javascript" src="../js/jsonselect.js" ></script>
+	</head>
+	<body style="background-color: #fff;">
+		<header>
+			<div class="title_top">
+				<a href="../mine.html" class="title_top_first">
+					<img src="../img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">基本信息</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="photo_img">
+				<p class="photo_img_p">
+					<img src="../img/goods_list.jpg" />
+				</p>
+			</div>
+			<div class="main_bg"></div>
+			<div class="main_bootom">
+				<ul>
+					<li class="first">
+						<a href="javascript:;" class="first_a">
+							<span class="title_content">
+								用户名
+							</span>
+							<span class="back_span">
+							</span>
+						</a>
+					</li>
+					<li class="first">
+						<a href="javascript:;" class="first_a sex_layer">
+							<span class="title_content">
+								性别
+							</span>
+							<span class="back_span">
+								<span class="back_span_xianshi"></span>
+							</span>
+						</a>
+					</li>
+					<li class="first">
+						<a href="javascript:;" class="first_a" >
+							<span class="title_content">
+								生日
+							</span>
+							<span class="back_span" id="select_2">
+								<span class="back_span_xianshi"></span>
+							</span>
+						</a>
+					</li>
+					<li class="first">
+						<a href="javascript:;" class="first_a">
+							<span class="title_content">
+								手机号
+							</span>
+							<span class="back_span">
+								<span class="back_span_xianshi get_phone" ></span>
+							</span>
+						</a>
+					</li>
+					<li class="first">
+						<a href="adress_manage.html" class="first_a">
+							<span class="title_content">
+								收货地址
+							</span>
+							<span class="back_span">
+							 <img src="../img/xiayiye.png" />
+							</span>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<!-- 性别弹框 -->
+		<div class="sex" style="display:none;">
+			<ul class="sex_ul">
+				<li>男</li>
+				<li>女</li>
+			</ul>
+			<p class="sex_bg"></p>
+			<p class="sex_cancle">取消</p>
+		</div>
+	</body>	
+	<script>
+		$(document).on("click", ".sex_layer", function(){
+			layer.open({
+				type: 1,
+				content: $('.sex').html(),
+				anim: 'up',
+				scrollbar: false,
+				shadeClose: false,
+				style: 'position:fixed;bottom:0;left: 0;width:100%;height: auto;border:none;'
+				
+			});
+		})
+		$(document).on("click", ".sex_cancle", function() {
+			layer.closeAll('page');
+
+		});
+		$(document).on("click", ".sex_ul li", function() {
+			var sexTxt = $(this).html();
+			$('.sex_layer .back_span_xianshi').html(sexTxt);
+			localStorage.setItem('sexTxt',$(this).html())
+			layer.closeAll('page');
+		})
+		// 手机号
+		var inviteCode=localStorage.getItem('InvitationCode');
+		$('.get_phone').html(inviteCode);
+		//性别
+		var sexTxt = localStorage.getItem('sexTxt');
+		$('.sex_layer .back_span_xianshi').html(sexTxt);
+		$.selectDate("#select_2", {}, function(data) {
+			//      alert(data.year+"-"+data.month+"-"+data.day);
+			console.log(data);
+			sStorage = window.localStorage; //本地存题目
+			sStorage.job = select_2.innerText;
+			
+		});
+		//生日
+		var job = localStorage.getItem('job');
+		$('#select_2 .back_span_xianshi').html(job);
+	</script>
+</html>

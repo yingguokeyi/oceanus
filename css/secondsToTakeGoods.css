@@ -1,0 +1,271 @@
+.container{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
+/* 头部 */
+header {
+    width: 100%;
+    height: 1.01rem;
+    line-height: 1.01rem;
+    color: #333333;
+    text-align: center;
+    font-size: 0.28rem;
+    background-color: #b61c25;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.title_top {
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    color: #333;
+    text-align: center;
+    background-color: #b61c25;
+}
+.title_top a.title_top_first {
+    width: 32%;
+    height: 0.85rem;
+    float: left;
+    text-align: left;
+    margin-left: 3%;
+}
+.title_top .hea_img {
+    width: 0.5rem;
+    height: 0.5rem;
+    vertical-align: middle;
+}
+.title_top span {
+    width: 32%;
+    height: 1rem;
+    float: left;
+    font-size: 0.34rem;
+    color: #ffffff;
+}
+/* 限时秒抢规则 */
+.stuff{
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    margin-top: 1rem;
+}
+.rule {
+    height:0.7rem;    
+    font-size:0.22rem;
+    color:#666666;
+    background:#fff;
+    line-height:0.7rem;   
+}
+/* 限时秒抢时间 */
+.time{
+    height: 0.7rem;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+  }
+  .time_left{
+    width: 3.75rem;
+    height: 0.7rem;
+    background: #ffc2c8;
+    font-size: 0.22rem;
+    text-align: center;
+    line-height: 0.7rem;
+    color: #fff;
+  }
+  
+  .time_right{
+    width: 3.75rem;
+    height: 0.7rem;
+    background: #ffc2c8;
+    font-size: 0.22rem;
+    text-align: center;
+    line-height: 0.7rem;
+    color: #fff;
+  }
+  .red{
+    background: #ff99a3;
+    color: #fff;
+     }
+ #tab1_content{
+    display:none;
+  }
+ #tab2_content{
+    display:none;
+  }
+  /* 商品列表 */
+  .cargo-list{
+    width: 100%;
+    height:3.08rem;
+    display:flex;
+    background: #fff;
+    border-bottom: 0.01rem solid #ebebeb;
+  }
+  .cargo-pro-image{
+    width: 2.40rem;
+    height: 2.40rem;
+    margin:0.3rem 0 0 0.3rem;
+    position:relative;
+  }
+  .cargo-pro-image img{
+    width: 2.44rem;
+    height: 2.44rem;
+    border: 0.01rem solid #ebebeb;
+  }
+  /* 按钮 */
+  .keypad{
+    width: 1.46rem;
+    height: 0.5rem;
+    background: #b61c25;
+    color: #fff;
+    font-size: 0.24rem;
+    border-radius:0.06rem; 
+    margin-left:2.78rem;
+    line-height:0.5rem;
+    text-align:center;
+  }
+  /* 已售完按钮 */
+  .keypads{
+    width: 1.46rem;
+    height: 0.5rem;
+    background: #ebebeb;
+    color: #b3b3b3;
+     font-size: 0.24rem;
+    border-radius:0.06rem; 
+     margin-left:2.78rem; 
+    line-height:0.5rem;
+    text-align:center;
+  }
+  .cargo-solid{
+    width: 6rem;
+    height: 3.08rem;
+  }
+  .cargo-pro-title{
+      font-family:'PingFangSC-Regular'; 
+      font-size:0.28rem;
+      color:#9c9b9b;
+      margin-top:0.2rem;
+      display: -webkit-box; 
+      word-break: break-all;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp:2;
+      line-height:0.35rem;
+      }
+   .cargo-pro-list{
+    margin:0 0.3rem 0 0.3rem;
+    height: 2.05rem;
+  } 
+   .cargo-pro-name{
+    width:0.6rem;
+    height:0.3rem;
+    line-height:0.3rem;
+    text-align:center;
+    background:#f8f5e4;
+    border-radius:0.02rem;
+    font-size:0.22rem;
+    color:#c8a200;
+    display:inline-block; 
+    margin-right:0.18rem; 
+    position: relative;
+    bottom:0.04rem;  
+    font-weight: bold;
+  }
+  .cargo-pro-texts{
+    font-family:"PingFangHK-Regular"; 
+    font-size:0.26rem;
+    color: #595757;
+  }
+  .cargo-pro-desc{
+    font-size:0.24rem;
+    color:#acacac;
+    height:0.3rem;
+     overflow: hidden; 
+     text-overflow: ellipsis;
+     line-height:0.3rem;
+  
+  }
+  .cargo-pro-state{
+    font-size: 0.24rem;
+    color: #999999;
+  }
+  .cargo-pro-money{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 0.08rem; 
+  }
+  .cargo-pro-price{
+    font-size: 0.28rem;
+    color: #e40012;
+    font-weight: bold;
+  }
+  .cargo-pro-cancel{
+    font-size: 0.22rem;
+    color: #727171;
+    text-decoration:line-through;
+    font-weight: bold;
+    margin-top: 0.07rem;
+    margin-left: 0.12rem;
+  }
+  .cargo-pro-backtrack{
+    font-size: 0.28rem;
+    color: #727171;
+    font-weight: bold;
+  }
+  .cargo-pro-symbol{
+    font-size: 0.24rem;
+    color: #999999;
+    padding-left: 0.12rem;
+    text-decoration:line-through;
+  }
+  .cargo-pro-explain{
+    font-size: 0.24rem;
+  }
+  .cargo-pro-explain{
+    font-size: 0.24rem;
+    color: #696969;
+  }
+  
+  
+  .commission{
+    width: 2.50rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    background: #FDDEDB;
+    text-align: center;
+    line-height: 0.5rem;
+    color: #E3514D;
+    margin-bottom: 0.2rem;
+    font-size: 0.24rem;
+    font-weight: bold;
+    
+  }
+  .show{
+    display:block;
+    }
+  .hidden{
+    display:none;
+    }
+  /* 没有秒杀的商品显示 */
+  .boring{
+    text-align: center;
+    width: 3.37rem;
+    height:0.31rem;
+    color: #999999;
+    font-size: 0.24rem;
+    margin-left:2.27rem;
+    margin-top:1.50rem;
+  }
+  /* 没有秒杀的商品显示 */
+.boring{
+  text-align: center;
+  width: 3.37rem;
+  height: 0.31rem;
+  color: #999999;
+  font-size: 0.24rem;
+  margin-left:2.27rem;
+  margin-top:1.5rem;
+}

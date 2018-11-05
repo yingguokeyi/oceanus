@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全部收入数据</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header_common.css" />
+		<link rel="stylesheet" href="../css/personal/mobileSelect.css" />
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/font-size.js"></script>
+		<script type="text/javascript" src="../js/date_address/mobileSelect.js"></script>
+		<script type="text/javascript" src="../js/date_address/selectDate.js"></script>
+	</head>
+	<style>
+		.main {
+			width: 100%;
+			height: auto;
+			margin-top: 1.01rem;
+		}
+		
+		.main_top {
+			width: 100%;
+			height: 2.1rem;
+			background-color: #fff;
+		}
+		
+		.main_top_yugushouyi {
+			width: 100%;
+			height: 1rem;
+		}
+		
+		.yugushouyi_left {
+			float: left;
+			color: #333333;
+			font-size: 0.3rem;
+			line-height: 1rem;
+			margin-left: 0.3rem;
+		}
+		
+		.yugushouyi_right {
+			width: 2.5rem;
+			height: 0.5rem;
+			line-height: 0.5rem;
+			float: right;
+			color: #333333;
+			font-size: 0.2rem;
+			border: 0.01rem solid #666;
+			position: relative;
+			padding-left: 0.25rem;
+			margin: 0.3rem 0.3rem 0 0;
+		}
+		.shouyi_xiala{
+			width: 2rem;
+			height: 0.5rem;
+			line-height: 0.5rem;
+			float: right;
+			color: #333333;
+			font-size: 0.2rem;
+			border: 0.01rem solid #666;
+			position: relative;
+			margin: 0.3rem 0.3rem 0 0;
+		}
+		.xiala {
+			width: 0.25rem;
+			height: 0.15rem;
+			position: absolute;
+			top: 0.17rem;
+			right: 0.1rem;
+		}
+		
+		.main_top_money {
+			width: 100%;
+			height: 1.1rem;
+		}
+		
+		.main_top_money span {
+			height: 1.1rem;
+			color: #CCA96A;
+			font-size: 0.4rem;
+			margin-left: 0.3rem;
+		}
+		
+		.main_top_money font {
+			font-size: 0.76rem;
+		}
+		/*收益类型*/
+		
+		.main_center {
+			width: 100%;
+			height: auto;
+		}
+		
+		.main_center_shouyi {
+			width: 100%;
+			height: 2.41rem;
+			background-color: #FFFFFF;
+			margin-top: 0.2rem;
+		}
+		/*中间我的收入这部分*/
+		
+		.main_bootom {
+			width: 100%;
+			height: auto;
+			background-color: #fff;
+		}
+		
+		.main_bootom_top {
+			width: 100%;
+			height: 1.1rem;
+			line-height: 1.1rem;
+			color: #333;
+			font-size: 0.34rem;
+			font-family: PingFangSC-Regular;
+			text-align: center;
+		}
+		
+		.main_bootom_ul {
+			width: 100%;
+			height: 1.4rem;
+			border-top: 0.01rem solid #EBEBEB;
+		}
+		
+		.main_bootom_ul li {
+			width: 25%;
+			height: 1.4rem;
+			line-height: 0.15rem;
+			text-align: center;
+			float: left;
+			border-right: 0.01rem solid #EBEBEB;
+		}
+		
+		.main_bootom_ul li.last_right {
+			border-right: none;
+		}
+		
+		.main_bootom_ul a {
+			display: inline-block;
+			width: 100%;
+			height: 1.4rem;
+		}
+		
+		.main_bootom_ul_span {
+			width: 100%;
+			height: 0.8rem;
+			line-height: 0.9rem;
+			text-align: center;
+			font-size: 0.3rem;
+			color: #333;
+		}
+		
+		.main_bootom_ul_spansec {
+			width: 100%;
+			height: 0.4rem;
+			line-height: 0.4rem;
+			text-align: center;
+			color: #666;
+			font-size: 0.3rem;
+		}
+		
+		/* select */
+		
+		.select {
+			width: 100%;
+    		height: 0.5rem;
+		}
+		.select dt {
+			height: 0.5rem;
+		    width: 100%;
+		    display: inline-block;
+		    line-height: 0.5rem;
+		    font-weight: bold;
+		    cursor: pointer;
+		    position: relative;
+		    z-index: 99;
+		    text-align: center;
+		    font-weight: normal;
+		}
+	
+		.select dd {
+		    width: 2rem;
+		    position: absolute;
+		    left: -1px;
+		    top: 0.5rem;
+		    border: 0.01rem solid #666;
+		    background: #fff;
+		    display: none;
+		    text-align: center;
+		    border-top: none;
+		}
+		.select dd ul li a {
+			width: 100%;
+		    line-height: 0.5rem;
+		    display: block;
+		    color: #666;
+		}
+	</style>
+	<body>
+		<header>
+			<div class="title_top">
+				<a href="../member.html" class="title_top_first">
+					<img src="../img/back1.png" class="hea_img" />
+				</a>
+				<span class="title_top_center">全部收入数据</span>
+			</div>
+		</header>
+		<div class="main">
+			<div class="main_top">
+				<div class="main_top_yugushouyi">
+					<span class="yugushouyi_left">今日预估收益</span>
+					<span class="yugushouyi_right" id="select_2">2018年2月15日 
+						<img src="img/xiala.png" class="xiala" /> </span>
+				</div>
+				<div class="main_top_money">
+					<span>￥<font>16.26</font></span>
+				</div>
+			</div>
+			<div class="main_center">
+				<div class="main_center_shouyi">
+					<div class="main_top_yugushouyi">
+						<span class="yugushouyi_left">日期：2018-3-7</span>
+						<span class="shouyi_xiala">
+							<dl class="select">
+								<dt>全部收益</dt>
+								<dd>
+									<ul>
+										<li>
+											<a href="javascript:;">佣金收益</a>
+										</li>
+										<li>
+											<a href="javascript:;">奖金收益</a>
+										</li>
+										<li>
+											<a href="javascript:;">返利收益</a>
+										</li>
+										<li>
+											<a href="javascript:;">分享收益</a>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<!--全部收益 <img src="img/xiala.png" class="xiala" /> -->
+						</span>
+					</div>
+					<ul class="main_bootom_ul">
+						<li>
+							<a href="javascript:;">
+								<span class="main_bootom_ul_span"> 
+									类型
+								</span><br />
+								<span class="main_bootom_ul_spansec">分享收益</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="dingdan_num.html">
+								<span class="main_bootom_ul_span">
+									订单量
+								</span><br />
+								<span class="main_bootom_ul_spansec">1</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									商品金额
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥1000.00</span>
+							</a>
+						</li>
+						<li class="last_right">
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									返现
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥0.01</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_center_shouyi">
+					<div class="main_top_yugushouyi">
+						<span class="yugushouyi_left">日期：2018-3-7</span>
+					</div>
+					<ul class="main_bootom_ul">
+						<li>
+							<a href="javascript:;">
+								<span class="main_bootom_ul_span"> 
+									类型
+								</span><br />
+								<span class="main_bootom_ul_spansec">分享收益</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="dingdan_num.html">
+								<span class="main_bootom_ul_span">
+									订单量
+								</span><br />
+								<span class="main_bootom_ul_spansec">1</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									商品金额
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥1000.00</span>
+							</a>
+						</li>
+						<li class="last_right">
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									返现
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥0.01</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_center_shouyi">
+					<div class="main_top_yugushouyi">
+						<span class="yugushouyi_left">日期：2018-3-7</span>
+					</div>
+					<ul class="main_bootom_ul">
+						<li>
+							<a href="javascript:;">
+								<span class="main_bootom_ul_span"> 
+									类型
+								</span><br />
+								<span class="main_bootom_ul_spansec">分享收益</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="dingdan_num.html">
+								<span class="main_bootom_ul_span">
+									订单量
+								</span><br />
+								<span class="main_bootom_ul_spansec">1</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									商品金额
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥1000.00</span>
+							</a>
+						</li>
+						<li class="last_right">
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									返现
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥0.01</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_center_shouyi">
+					<div class="main_top_yugushouyi">
+						<span class="yugushouyi_left">日期：2018-3-7</span>
+					</div>
+					<ul class="main_bootom_ul">
+						<li>
+							<a href="javascript:;">
+								<span class="main_bootom_ul_span"> 
+									类型
+								</span><br />
+								<span class="main_bootom_ul_spansec">分享收益</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="dingdan_num.html">
+								<span class="main_bootom_ul_span">
+									订单量
+								</span><br />
+								<span class="main_bootom_ul_spansec">1</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									商品金额
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥1000.00</span>
+							</a>
+						</li>
+						<li class="last_right">
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									返现
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥0.01</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_center_shouyi">
+					<div class="main_top_yugushouyi">
+						<span class="yugushouyi_left">日期：2018-3-7</span>
+					</div>
+					<ul class="main_bootom_ul">
+						<li>
+							<a href="javascript:;">
+								<span class="main_bootom_ul_span"> 
+									类型
+								</span><br />
+								<span class="main_bootom_ul_spansec">分享收益</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="dingdan_num.html">
+								<span class="main_bootom_ul_span">
+									订单量
+								</span><br />
+								<span class="main_bootom_ul_spansec">1</span><br />
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									商品金额
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥1000.00</span>
+							</a>
+						</li>
+						<li class="last_right">
+							<a href="javascript:;" class="style">
+								<span class="main_bootom_ul_span">
+									返现
+								</span><br />
+								<span class="main_bootom_ul_spansec">￥0.01</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script>
+		$.selectDate("#select_2", {}, function(data) {
+			//      alert(data.year+"-"+data.month+"-"+data.day);
+			console.log(data);
+			sStorage = window.localStorage; //本地存题目
+			sStorage.job = select_2;
+		});
+
+		$(function() {
+			$(".select").each(function() {
+				var s = $(this);
+				var z = parseInt(s.css("z-index"));
+				var dt = $(this).children("dt");
+				var dd = $(this).children("dd");
+				var _show = function() {
+					dd.slideDown(200);
+					dt.addClass("cur");
+					s.css("z-index", z + 1);
+				}; //展开效果
+				var _hide = function() {
+					dd.slideUp(200);
+					dt.removeClass("cur");
+					s.css("z-index", z);
+				}; //关闭效果
+				dt.click(function() {
+					dd.is(":hidden") ? _show() : _hide();
+				});
+				dd.find("a").click(function() {
+					dt.html($(this).html());
+					_hide();
+				}); //选择效果（如需要传值，可自定义参数，在此处返回对应的“value”值 ）
+				$("body").click(function(i) {
+					!$(i.target).parents(".select").first().is(s) ? _hide() : "";
+				});
+			})
+		})
+	</script>
+</html>

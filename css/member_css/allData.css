@@ -1,0 +1,65 @@
+.main{
+	width: 100%;
+	height: auto;
+	margin-top: 1.01rem;
+	overflow: hidden;
+}
+/*有数据*/
+.all_ul{
+	width: 100%;
+	height: auto;
+	display: none;
+}
+.all_ul li{
+	width: 100%;
+	height: auto;
+	padding: .24rem .3rem .3rem;
+	margin-bottom: .1rem;
+	background: #fff;
+}
+.all_title{
+	width: 100%;
+	font-size: .24rem;
+	color: #333;
+}
+.all_text{
+	margin-top: .42rem;
+	overflow: hidden;
+}
+.all_price{
+	width: 50%;
+	float: left;
+	color: #e40012;
+	font-size: .26rem;
+}
+.all_price i{
+	font-size: .46rem;
+}
+.all_singular{
+	width: 50%;
+	float: right;
+	color: #333;
+	font-size: .24rem;
+	text-align: right;
+}
+/*无数据*/
+.anonymous{
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+.anonymous p{
+	margin-top: 2rem;
+	color: #999;
+	font-size: .24rem;
+}
+.anonymous button{
+	width: 2.4rem;
+	height: .78rem;
+	background: #b61c25;
+	color: #fff;
+	text-align: center;
+	line-height: .78rem;
+	margin-top: .64rem;
+	border-radius: .06rem
+}
